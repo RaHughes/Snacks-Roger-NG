@@ -4,72 +4,73 @@
 	<title>Number Guesser</title>
 </head>
 <body>
-	<header>
+	<header class="header">
 		<h1 class="header-h1"> <strong> Number </strong> Guesser </h1>
-		<p> Ultimate Challenger Edition </p>
+		<p class="header-par"> Ultimate Challenger Edition </p>
 	</header>
 	<main class="guesser">
 		<section class="guesser-range">
-			<h2> Set Range </h2>
-			<p> min Range </p> 
+			<h2 class="guesser-range-h2"> Set Range </h2>
+			<p class="guesser-range-min-max"> Min Range </p> 
 			<input class="guesser-range-input min" type="text">
-			<p> Max Range </p>
+			<p class="guesser-range-min-max"> Max Range </p>
 			<imput class="guesser-range-input max" type="text">
 			<button class="guesser-range-button">UPDATE</button>	
 		</section>
 		<section class="guesser-challenger">
 			<p> The Current Range is <span>1</span> to <span>100</span>
-			<article class="guesser-challenger-player one">
-				<h2> Challenger 1</h2>
+			<form class="guesser-challenger-player one">
+				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
 				<p>Name</p>
 				<input class="guesser-challenger-input name-one" type="text">
 				<p>Guess</p>
 				<input class="guesser-challenger-input guess-one" type="text">
-			</article>
-			<article class="guesser-challenger-player two">
-				<h2> Challenger 1</h2>
+			</form>
+			<form class="guesser-challenger-player two">
+				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
 				<p>Name</p>
 				<input class="guesser-challenger-input name-two" type="text">
 				<p>Guess</p>
 				<input class="guesser-challenger-input guess-two" type="text">
-			</article>
-			<article class="guesser-challenger-buttons">
+			</form>
+			<form class="guesser-challenger-buttons">
 				<button class="guesser-challenger-buttons-guess">SUBMIT GUESS</button>
 				<button class="guesser-challenger-buttons-reset">RESET GAME</button>
 				<button class="guesser-challenger-buttons-clear">CLEAR GAME</button>
-			</article>
+			</form>
 		</section>
 		<section class="guesser-score">
-			<h2> Lastest Score </h2>
-			<article class="guesser-score-current player-one">
+			<h2 class="guesser-score-h2"> Lastest Score </h2>
+			<div class="guesser-score-current player-one">
 				<h3> Challenger 1 Name </h3>
 				<p>current guess</p>
 				<p>Num</p>
 				<p>result</p>
-			</article>
-			<article class="guesser-score-current player-two">
+			</div>
+			<div class="guesser-score-current player-two">
 				<h3> Challenger 1 Name </h3>
 				<p>current guess</p>
 				<p>Num</p>
 				<p>result</p>
-			</article>
+			</div>
 		</section>
 	</main>
 	<main class="results">
 		<section class="results-cards">
-			<article class="results-cards-challengers">
+			<div class="results-cards-challengers">
 				<h4> CHALLENGER 1 NAME </h4>
 				<p> vs </p>
 				<h4> CHALLENGER 2 NAME </h4>
-			</article>
-			<article class="results-cards-winner">
+			</div>
+			<div class="results-cards-winner">
 				<p>CHALLNGER NAME</p>
 				<P>WINNER</P>
-			</article>
-			<article class="results-cards-stats">
+			</div>
+			<div class="results-cards-stats">
 				<p>guesses</p>
 				<p>minutes</p>
 				<buttom class="results-cards-stats-exit-button">X</buttom>
+			</div>
 		</section>
 	</main>
 </body>
