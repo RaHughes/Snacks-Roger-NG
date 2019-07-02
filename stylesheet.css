@@ -2,31 +2,81 @@
 body {
 	margin: 0px;
 }
+
 /********** Header ************/
-h1 {
-	margin-top: 0px;
-}
-header {
+.header {
+	display: flex;
+	flex-direction: column;
 	background-color: #404041;
-	width: 100%;
-	text-align: center;
-	height: 35%;
 }
 /********** Guesser ***********/
-.guesser-range {
-	width: 45%;
-}
 .guesser {
+	display: flex;
+	display-direction: column;
+	width: 45%;
 	background-color: #f7f7f7;
-	display: inline-block;
-	width: 50%;
-	height: 75%;
+}
+.guesser-range {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	margin: 10px;
+}
+.guesser-range-row {
+	display: flex;
+	flex-direction: row;
+}
+.guesser-challenger {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	margin: 10px;
+}
+.guesser-challenger-player {
+	display: flex;
+	flex-direction: row;
+	border: 2px solid red;
+}
+.guesser-challenger-player-form {
+	display: flex;
+	flex-direction: column;
+}
+.guesser-challenger-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.guesser-score {
+	display: flex;
+	flex-direction: row;
+	background-color: #ffffff;
+	margin: 10px;
+}
+.guesser-score-current {
+	display: flex;
+	flex-direction: column;
 }
 /********** Results ***********/
 .results {
-	background-color: #D0D2D3;
-	display: inline-block;
-	width: 50%;
-	height: 75%;
-	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: #d0d2d3;
+}
+.results-cards {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	margin: 10px;
+}
+.results-cards-challengers {
+	display: flex;
+	flex-direction: row;
+}
+.results-cards-winner {
+	display: flex;
+	flex-direction: column;
+}
+.results-cards-stats {
+	display: flex;
+	flex-direction: row;
 }
