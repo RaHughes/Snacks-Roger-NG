@@ -2,37 +2,54 @@
 <html>
 <head>
 	<title>Number Guesser</title>
+	<link rel="Stylesheet" type="text/css" href="stylesheet.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header class="header">
 		<h1 class="header-h1"> <strong> Number </strong> Guesser </h1>
 		<p class="header-par"> Ultimate Challenger Edition </p>
 	</header>
+	<main class="bigBoi">
 	<main class="guesser">
 		<section class="guesser-range">
 			<h2 class="guesser-range-h2"> Set Range </h2>
-			<p class="guesser-range-min-max"> Min Range </p> 
-			<input class="guesser-range-input min" type="text">
-			<p class="guesser-range-min-max"> Max Range </p>
-			<imput class="guesser-range-input max" type="text">
-			<button class="guesser-range-button">UPDATE</button>	
+			<div class="guesser-range-row">
+				<container class="guesser-range-row-container">
+					<p class="guesser-range-min-max"> Min Range </p> 
+					<input class="guesser-range-input min" type="text">
+				</container>
+				<container class="guess-range-row-container">
+					<p class="guesser-range-min-max"> Max Range </p>
+					<input class="guesser-range-input max" type="text">
+				</container>
+				<button class="guesser-range-button">UPDATE</button>	
+			</div>
 		</section>
 		<section class="guesser-challenger">
-			<p> The Current Range is <span>1</span> to <span>100</span>
-			<form class="guesser-challenger-player one">
+			<p class="guess-challenger-header"> The Current Range is <span>1</span> to <span>100</span></p>
+			<container class="guesser-challenger-player one">
 				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
-				<p>Name</p>
-				<input class="guesser-challenger-input name-one" type="text">
-				<p>Guess</p>
-				<input class="guesser-challenger-input guess-one" type="text">
-			</form>
-			<form class="guesser-challenger-player two">
-				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
-				<p>Name</p>
-				<input class="guesser-challenger-input name-two" type="text">
-				<p>Guess</p>
-				<input class="guesser-challenger-input guess-two" type="text">
-			</form>
+					<form class="guesser-challenger-player-form">
+						<p>Name</p>
+						<input class="guesser-challenger-input name-one" type="text">
+					</form>
+					<form class="guesser-challenger-player-form">
+						<p>Guess</p>
+						<input class="guesser-challenger-input guess-one" type="text">
+					</form>
+			</container>
+			<container class="guesser-challenger-player two">
+				<h2 class="guesser-challenger-player-h2"> Challenger 2</h2>
+					<form class="guesser-challenger-player-form">
+						<p>Name</p>
+						<input class="guesser-challenger-input name-two" type="text">
+					</form>
+					<form class="guesser-challenger-player-form">
+						<p>Guess</p>
+						<input class="guesser-challenger-input guess-two" type="text">
+					</form>
+			</container>
 			<form class="guesser-challenger-buttons">
 				<button class="guesser-challenger-buttons-guess">SUBMIT GUESS</button>
 				<button class="guesser-challenger-buttons-reset">RESET GAME</button>
@@ -48,7 +65,7 @@
 				<p>result</p>
 			</div>
 			<div class="guesser-score-current player-two">
-				<h3> Challenger 1 Name </h3>
+				<h3> Challenger 2 Name </h3>
 				<p>current guess</p>
 				<p>Num</p>
 				<p>result</p>
@@ -73,5 +90,6 @@
 			</div>
 		</section>
 	</main>
+</main>
 </body>
 </html>
