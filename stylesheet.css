@@ -5,8 +5,6 @@
 	/*padding: 0px;*/
 	/*border: 1px solid red;*/
 }
-	font-family: 'open sans', serif;
-}
 /** {
 	border: 2px solid red;
 }*/
@@ -56,12 +54,6 @@ strong {
 	width: 25%;
 	background-color: #FFFFFF;
 
-}
-
-/********** bigBoi ************/
-.bigBoi {
-	display: flex;
-	flex-wrap: wrap;
 }
 /********** bigBoi ************/
 .bigBoi {
