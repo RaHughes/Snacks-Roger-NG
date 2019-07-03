@@ -1,6 +1,9 @@
 /********** Body **************/
-body {
+* {
+	font-family: 'Open Sans', serif;
 	margin: 0px;
+	/*padding: 0px;*/
+	/*border: 1px solid red;*/
 }
 	font-family: 'open sans', serif;
 }
@@ -12,7 +15,53 @@ body {
 .header {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background-color: #404041;
+	height: 150px;
+
+}
+.header-container {
+	display: flex;
+	flex-direction: column;
+	/*width: 600px;*/
+}
+
+.header-h1 {
+	font-weight: 300;
+	font-size: 75px;
+	font-weight: 300;
+	color: #DD1972
+}
+strong {
+	font-weight: 700;
+}
+
+.header-line-container{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.header-line-container-text {
+	font-size: 20px; 
+	color: #FFFFFF;
+	font-weight: lighter;
+}
+
+.header-line-container-line {
+	height: 1px;
+	width: 25%;
+	background-color: #FFFFFF;
+
+}
+
+/********** bigBoi ************/
+.bigBoi {
+	display: flex;
+	flex-wrap: wrap;
 }
 /********** bigBoi ************/
 .bigBoi {
@@ -136,12 +185,21 @@ body {
 .results-cards-challengers {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	margin: 5px 10px 5px 10px;
 }
 .results-cards-winner {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 .results-cards-stats {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+}
+
+.results-cards-lines {
+	margin: 0px 20px 0px 20px;
+	color: #404041;
 }
