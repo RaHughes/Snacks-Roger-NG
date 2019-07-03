@@ -3,12 +3,20 @@
 <head>
 	<title>Number Guesser</title>
 	<link rel="Stylesheet" type="text/css" href="stylesheet.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<header class="header">
-		<h1 class="header-h1"> <strong> Number </strong> Guesser </h1>
-		<p class="header-par"> Ultimate Challenger Edition </p>
+		<div class="header-container">
+			<h1 class="header-h1"> <strong>NUMBER</strong>GUESSER</h1>
+			<div class="header-line-container">
+				<div class="header-line-container-line"></div>
+				<h2 class="header-line-container-text">ULTIMATE CHALLANGER EDITION</h2>
+				<div class="header-line-container-line"></div>
+			</div>
+		</div>
 	</header>
+	<main class="bigBoi">
 	<main class="guesser">
 		<section class="guesser-range">
 			<h2 class="guesser-range-h2"> Set Range </h2>
@@ -25,7 +33,7 @@
 			</div>
 		</section>
 		<section class="guesser-challenger">
-			<p> The Current Range is <span>1</span> to <span>100</span>
+			<p> The Current Range is <span>1</span> to <span>100</span> </p>
 			<container class="guesser-challenger-player one">
 				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
 					<form class="guesser-challenger-player-form">
@@ -77,10 +85,12 @@
 				<p> vs </p>
 				<h4> CHALLENGER 2 NAME </h4>
 			</div>
+			<hr class="results-cards-lines">
 			<div class="results-cards-winner">
 				<p>CHALLNGER NAME</p>
 				<P>WINNER</P>
-			</div>
+			</div class="results-cards-lines">
+			<hr class="results-cards-lines">
 			<div class="results-cards-stats">
 				<p>guesses</p>
 				<p>minutes</p>
@@ -88,5 +98,6 @@
 			</div>
 		</section>
 	</main>
+</main>
 </body>
 </html>
