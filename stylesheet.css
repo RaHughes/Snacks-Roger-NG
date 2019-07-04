@@ -13,7 +13,6 @@
 .header {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	background-color: #404041;
 	height: 150px;
@@ -26,7 +25,6 @@
 }
 
 .header-h1 {
-	font-weight: 300;
 	font-size: 75px;
 	font-weight: 300;
 	color: #DD1972
@@ -172,23 +170,64 @@ strong {
 	display: flex;
 	flex-direction: column;
 	background-color: #ffffff;
-	margin: 10px;
+	margin: 20px;
 }
 .results-cards-challengers {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-evenly;
 	margin: 5px 10px 5px 10px;
+}
+.results-cards-challengers{
+	color: #6E6E6E;
+}
+.challanger-1{
+	margin-left: 7%;
+}
+.challanger-2{
+	margin-right: 7%;
 }
 .results-cards-winner {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 20px 0px;
+}
+.results-cards-winner-name {
+	font-size: 30px;
+	font-weight: 700;
+	color: #6E6E6E;
+	margin-bottom: -7px;
+}
+.results-cards-winner-winner {
+	font-size: 30px;
+	font-weight: 300;
+	color: #6E6E6E;
 }
 .results-cards-stats {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin: 10px 0px;
+}
+
+.results-cards-stats-guesses {
+	margin-left: 4%;
+	color: #6E6E6E;
+}
+
+.results-cards-stats-minutes {
+	margin-right: 8%;
+	color: #6E6E6E;
+}
+
+.results-cards-stats-exit-button {
+	margin-right: 4%;
+	color: #FFFFFF;
+	background-color: #6E6E6E;
+	border-radius: 50%;
+	padding: 0px 7px;
+	font-weight: 300;
 }
 
 .results-cards-lines {
