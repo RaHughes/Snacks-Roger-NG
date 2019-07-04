@@ -133,8 +133,6 @@ span {
 .guesser-challenger-player-h2 {
 	display: block;
 	color: #6e6e6e;
-	/*padding: 10px;*/
-	/*margin-bottom: 10%;*/
 	height: 25px;
 	width: 100%;
 	padding: 2%;
@@ -231,17 +229,73 @@ span {
 	margin-bottom: 50px;
 	height: 200px;
 /*	padding: 30px;*/
+
+/********** Guesser Score ***********/
+
 }
-.guesser-score-current {
+.guesser-score {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 }
+.guesser-score-h2 {
+	font-weight: 700;
+	font-size: 15px;
+	color: #404041;
+	margin: 5px;
+}
+.guesser-score-container{
+	display: flex;
+	/*flex-direction: row;*/
+	justify-content: center;
+
+}
+.guesser-score-current{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5px 15px;
+	padding: 0px 10px;
+}
+.guesser-score-current-challanger {
+	font-size: 15px;
+	font-weight: 700;
+	color: #6E6E6E;
+}
+.guesser-score-current-current-guess-text{
+	font-size: 12px;
+	font-weight: 300;
+	color: #6E6E6E;
+}
+.guesser-score-current-current-guess-num{
+	font-size: 50px;
+	font-weight: 700;
+	color: #F74D9B;
+	margin: -6px 0px;
+}
+.guesser-score-current-result{
+	font-size: 18px;
+	font-weight: 300;
+	color: #6E6E6E;
+}
+.guesser-score-line{
+	width: 1px;
+	height: 134%;
+	background-color: #D0D2D3;
+	margin-top: -19px;
+}
+
+
+
+
+
+
+
+
 /********** Results ***********/
 .results {
-	/*display: inline-block;*/
 	background-color: #d0d2d3;
 	width: 49%;
-	/*height: 1000px;*/
 	flex: 1;
 }
 .results-cards {
@@ -257,6 +311,8 @@ span {
 	margin: 5px 10px 5px 10px;
 }
 .results-cards-challengers{
+	display: flex;
+	align-items: center;
 	color: #6E6E6E;
 }
 .challanger-1{
