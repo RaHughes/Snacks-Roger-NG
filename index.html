@@ -3,8 +3,8 @@
 <head>
 	<title>Number Guesser</title>
 	<link rel="Stylesheet" type="text/css" href="stylesheet.css" />
-
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,700&display=swap" rel="stylesheet">
+	
 </head>
 <body>
 	<header class="header">
@@ -24,18 +24,17 @@
 			<div class="guesser-range-row">
 				<container class="guesser-range-row-container">
 					<p class="guesser-range-min-max"> Min Range </p> 
-					<input class="guesser-range-input min" type="text">
+					<input class="guesser-range-input min" id="min-input" type="number">
 				</container>
 				<container class="guess-range-row-container">
 					<p class="guesser-range-min-max"> Max Range </p>
-					<input class="guesser-range-input max" type="text">
+					<input class="guesser-range-input max" id="max-input" type="number">
 				</container>
 				<button class="guesser-range-button">UPDATE</button>	
 			</div>
 		</section>
 		<section class="guesser-challenger">
-
-			<p class="guess-challenger-header"> The Current Range is <span>1</span> to <span>100</span></p>
+			<p class="guess-challenger-header"> The Current Range is <span class="span-one">1</span> to <span class="span-two">100</span></p>
 			<container class="guesser-challenger-player one">
 				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
 					<form class="guesser-challenger-player-form">
@@ -104,5 +103,6 @@
 		</section>
 	</main>
 </main>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
