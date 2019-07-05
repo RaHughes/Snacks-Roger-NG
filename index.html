@@ -37,46 +37,46 @@
 			<p class="guess-challenger-header"> The Current Range is <span class="span-one">1</span> to <span class="span-two">100</span></p>
 			<container class="guesser-challenger-player one">
 				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
-					<form class="guesser-challenger-player-form">
+					<container class="guesser-challenger-player-form">
 						<p class="guesser-challenger-player-name">Name</p>
-						<input class="guesser-challenger-input name-one" type="text">
-					</form>
-					<form class="guesser-challenger-player-form">
+						<input class="guesser-challenger-input" id="name-one" type="text">
+					</container>
+					<container class="guesser-challenger-player-form">
 						<p class="guesser-challenger-player-guess">Guess</p>
-						<input class="guesser-challenger-input guess-one" type="text">
-					</form>
+						<input class="guesser-challenger-input" id="guess-one" type="text">
+					</container>
 			</container>
 			<container class="guesser-challenger-player two">
 				<h2 class="guesser-challenger-player-h2"> Challenger 2</h2>
-					<form class="guesser-challenger-player-form">
+					<container class="guesser-challenger-player-form">
 						<p class='guesser-challenger-player-name'>Name</p>
-						<input class="guesser-challenger-input name-two" type="text">
-					</form>
-					<form class="guesser-challenger-player-form">
+						<input class="guesser-challenger-input" id="name-two"type="text">
+					</container>
+					<container class="guesser-challenger-player-form">
 						<p class="guesser-challenger-player-guess">Guess</p>
-						<input class="guesser-challenger-input guess-two" type="text">
-					</form>
+						<input class="guesser-challenger-input" id="guess-two" type="text">
+					</container>
 			</container>
-			<form class="guesser-challenger-buttons">
+			<container class="guesser-challenger-buttons">
 				<button class="guesser-challenger-buttons-guess">SUBMIT GUESS</button>
 				<button class="guesser-challenger-buttons-reset">RESET GAME</button>
 				<button class="guesser-challenger-buttons-clear">CLEAR GAME</button>
-			</form>
+			</container>
 		</section>
 		<section class="guesser-score">
 			<h2 class="guesser-score-h2"> Lastest Score </h2>
 			<container class="guesser-score-container">	
 				<div class="guesser-score-current player-one">
-					<h3 class="guesser-score-current-challanger"> Challenger 1 Name </h3>
+					<h3 class="guesser-score-current-challanger" id="current-challenger-one"> Challenger 1 Name </h3>
 					<p class="guesser-score-current-current-guess-text">current guess</p>
-					<p class="guesser-score-current-current-guess-num">Num</p>
+					<p class="guesser-score-current-current-guess-num-one">Num</p>
 					<p class="guesser-score-current-result">result</p>
 				</div>
 				<div class="guesser-score-line"></div>
 				<div class="guesser-score-current player-two">
-					<h3 class="guesser-score-current-challanger"> Challenger 2 Name </h3>
+					<h3 class="guesser-score-current-challanger" id="current-challenger-two"> Challenger 2 Name </h3>
 					<p class="guesser-score-current-current-guess-text">current guess</p>
-					<p class="guesser-score-current-current-guess-num">Num</p>
+					<p class="guesser-score-current-current-guess-num-two">Num</p>
 					<p class="guesser-score-current-result">result</p>
 				</div>
 			</container>

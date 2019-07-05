@@ -148,21 +148,21 @@ span {
 	font-size: 22px;
 }
 
-.name-one {
+#name-one {
 	width: 260px;
 	margin-left: 5%;
 	height: 25px;
 }	
-.name-two {
+#name-two {
 	width: 260px;
 	margin-left: 5%;
 	height: 25px;	
 }
-.guess-one {
+#guess-one {
 	width: 50%;
 	height: 25px;
 }
-.guess-two {
+#guess-two {
 	width: 50%;
 	height: 25px;
 }
@@ -265,7 +265,8 @@ span {
 	font-weight: 300;
 	color: #6E6E6E;
 }
-.guesser-score-current-current-guess-num{
+.guesser-score-current-current-guess-num-one, 
+.guesser-score-current-current-guess-num-two{
 	font-size: 50px;
 	font-weight: 700;
 	color: #F74D9B;
