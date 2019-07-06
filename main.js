@@ -28,12 +28,12 @@ function updateMinMax() {
 
 // Function Guesser Challenger
 submitBtn.addEventListener('click', function () {
-	getNameGuess();
-	console.log(nameOne, nameTwo);
-	document.querySelector('#current-challenger-one').innerHTML = nameOne;
-	document.querySelector('#current-challenger-two').innerHTML = nameTwo;
-	document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
-	document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
+  getNameGuess();
+  console.log(nameOne, nameTwo);
+  document.querySelector('#current-challenger-one').innerHTML = nameOne;
+  document.querySelector('#current-challenger-two').innerHTML = nameTwo;
+  document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
+  document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
   compareResults1(randoNum, guessOne);
   compareResults2(randoNum, guessTwo);
   console.log('type of:', typeof(guessOne))
@@ -41,7 +41,7 @@ submitBtn.addEventListener('click', function () {
 
 
 function getNameGuess() {
-	  nameOne = document.querySelector('#name-one').value;
+    nameOne = document.querySelector('#name-one').value;
     nameTwo = document.querySelector('#name-two').value;
     guessOne = document.querySelector('#guess-one').value;
     guessTwo = document.querySelector('#guess-two').value; 
@@ -49,12 +49,13 @@ function getNameGuess() {
 
 
 function randomNum(min, max) {
-    console.log(min, max)
+    min = parseInt(min);
+    max = parseInt(max);
     randoNum = Math.floor(Math.random() * (max - min) + min);
     if(randoNum === 0) {
       randoNum = randoNum + 1;
-    }
-    console.log(randoNum);
+    } 
+    console.log('randoNum: ', randoNum);
     return randoNum;
 }
 
