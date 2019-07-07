@@ -34,7 +34,7 @@ clearBtn.addEventListener('click', function(){
   console.log('clear button is working!')
 });
 
-resetBtn.addEventListener('click', function() { 
+resetBtn.addEventListener('click', function() {
   document.querySelector('#guess-one').value = ''
   document.querySelector('#guess-two').value = ''
   document.querySelector('#min-input').value = ''
@@ -48,11 +48,12 @@ resetBtn.addEventListener('click', function() {
   document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = '0'
   document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = '0'
   console.log('Reset button is working?')
+  resetBtn.disabled = true;
+  resetBtn.style.backgroundColor='#d0d2d3';
 });
 
 // Button disable functionality
 clearBtn.disabled = true;
-
 document.getElementById('guess-one').addEventListener('keypress', function () {
     clearBtn.style.backgroundColor='#6e6e6e';
     clearBtn.disabled = false;
@@ -69,6 +70,16 @@ document.getElementById('guess-two').addEventListener('keypress', function () {
 //     clearBtn.disabled = false;
 //     });
 // }
+resetBtn.disabled = true;
+document.getElementById('name-one').addEventListener('keypress', function () {
+    resetBtn.style.backgroundColor='#6e6e6e';
+    resetBtn.disabled = false;
+});
+document.getElementById('name-two').addEventListener('keypress', function () {
+    resetBtn.style.backgroundColor='#6e6e6e';
+    resetBtn.disabled = false;
+});
+
 
 function updateMinMax() {
   minRange = document.querySelector('#min-input').value;
