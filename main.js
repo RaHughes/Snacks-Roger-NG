@@ -13,7 +13,7 @@ var guessOne = document.querySelector('#guess-one').value;
 var guessTwo = document.querySelector('#guess-two').value;
 var guessTwoInput = document.getElementById('#guess-two');
 var submitBtn = document.querySelector('.guesser-challenger-buttons-guess');
-var resetBtn
+var resetBtn = document.querySelector('.guesser-challenger-buttons-reset')
 var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
 var guessInputs = document.querySelectorAll('guess-one','guess-two')
 // Variable Results Lastest Score
@@ -32,6 +32,22 @@ clearBtn.addEventListener('click', function(){
   clearBtn.disabled = true;
   clearBtn.style.backgroundColor='#d0d2d3';
   console.log('clear button is working!')
+});
+
+resetBtn.addEventListener('click', function() { 
+  document.querySelector('#guess-one').value = ''
+  document.querySelector('#guess-two').value = ''
+  document.querySelector('#min-input').value = ''
+  document.querySelector('#max-input').value = ''
+  document.querySelector('#name-one').value = ''
+  document.querySelector('#name-two').value = ''
+  document.querySelector('.result-one').innerHTML = 'result'
+  document.querySelector('.result-two').innerHTML = 'result'
+  document.querySelector('#current-challenger-one').innerHTML = 'Challenger 1 name'
+  document.querySelector('#current-challenger-two').innerHTML = 'Challenger 2 name'
+  document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = '0'
+  document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = '0'
+  console.log('Reset button is working?')
 });
 
 // Button disable functionality
