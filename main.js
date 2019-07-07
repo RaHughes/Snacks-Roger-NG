@@ -17,7 +17,7 @@ var resetBtn = document.querySelector('.guesser-challenger-buttons-reset')
 var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
 var guessInputs = document.querySelectorAll('guess-one','guess-two')
 // Variable Results Lastest Score
-
+var results = document.querySelector('.results')
 // Function Guesser Range
 updateBtn.addEventListener('click', function() {
   updateMinMax();
@@ -47,6 +47,8 @@ resetBtn.addEventListener('click', function() {
   document.querySelector('#current-challenger-two').innerHTML = 'Challenger 2 name'
   document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = '0'
   document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = '0'
+  document.querySelector('.span-one').innerHTML = '1'
+  document.querySelector('.span-two').innerHTML = '100'
   console.log('Reset button is working?')
   resetBtn.disabled = true;
   resetBtn.style.backgroundColor='#d0d2d3';
@@ -105,6 +107,7 @@ submitBtn.addEventListener('click', function () {
   compareResults1(randoNum, guessOne);
   compareResults2(randoNum, guessTwo);
   console.log('type of:', typeof(guessOne))
+  checkForWinner(randoNum, guessOne, guessTwo);
 });
 
 
@@ -150,3 +153,43 @@ function randomNum(min, max) {
       document.querySelector('.result-two').innerHTML = 'That\'s too low!';
     }
   }
+
+  // Function Reults
+  function checkForWinner(randoNum, guessOne, guessTwo) {
+    console.log('Is working', document.querySelector('.result-one').value);
+    userGuessOne = parseInt(guessOne);
+    userGuessTwo = parseInt(guessTwo);
+    if(userGuessOne === randoNum) {
+      buildCard(nameOne)
+      console.log('Player 1 wins!');
+    } 
+
+    if(userGuessTwo === randoNum) {
+      buildCard(nameTwo)
+      console.log('Player 2 wins!');
+    }
+  }
+  
+  function buildCard(winner) {
+  results.insertAdjacentHTML('afterbegin', `
+  <section class="results-cards">
+      <div class="results-cards-challengers">
+        <h4 class="results-cards-challengers challanger-1"> ${nameOne} </h4>
+        <p class="results-cards-challengers-vs"> vs </p>
+        <h4 class="results-cards-challengers challanger-2"> ${nameTwo} </h4>
+      </div>
+      <hr class="results-cards-lines">
+      <div class="results-cards-winner">
+        <p class="results-cards-winner-name">${winner}</p>
+        <P class="results-cards-winner-winner" >WINNER</P>
+      </div class="results-cards-lines">
+      <hr class="results-cards-lines">
+      <div class="results-cards-stats">
+        <p class="results-cards-stats-guesses">${'GUESSES'}</p>
+        <p class="results-cards-stats-minutes">${'MINUTES'}</p>
+        <buttom class="results-cards-stats-exit-button">X</buttom>
+      </div>
+    </section>`)
+};
+
+// import { html, render } from './lit-html.js';
