@@ -1,3 +1,5 @@
+
+
 // Variable Guesser Range
 var minRange = document.querySelector('#min-input').value;
 var maxRange = document.querySelector('#max-input').value;
@@ -9,10 +11,11 @@ var nameOne = document.querySelector('#name-one').value;
 var nameTwo = document.querySelector('#name-two').value;
 var guessOne = document.querySelector('#guess-one').value;
 var guessTwo = document.querySelector('#guess-two').value;
+var guessTwoInput = document.getElementById('#guess-two');
 var submitBtn = document.querySelector('.guesser-challenger-buttons-guess');
-var restBtn
+var resetBtn
 var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
-
+var guessInputs = document.querySelectorAll('guess-one','guess-two')
 // Variable Results Lastest Score
 
 // Function Guesser Range
@@ -26,9 +29,30 @@ updateBtn.addEventListener('click', function() {
 clearBtn.addEventListener('click', function(){
   document.querySelector('#guess-one').value = ''
   document.querySelector('#guess-two').value = ''
+  clearBtn.disabled = true;
+  clearBtn.style.backgroundColor='#d0d2d3';
   console.log('clear button is working!')
 });
 
+// Button disable functionality
+clearBtn.disabled = true;
+
+document.getElementById('guess-one').addEventListener('keypress', function () {
+    clearBtn.style.backgroundColor='#6e6e6e';
+    clearBtn.disabled = false;
+});
+document.getElementById('guess-two').addEventListener('keypress', function () {
+    clearBtn.style.backgroundColor='#6e6e6e';
+    clearBtn.disabled = false;
+});
+// I tried to create a for loop for this: ------------
+// for (var i=0; i<guessInputs.length; i++){
+//   console.log(guessInputs[i])
+//   document.getElementById(guessInputs[i]).addEventListener('keypress', function () {
+//     clearBtn.style.backgroundColor='#6e6e6e';
+//     clearBtn.disabled = false;
+//     });
+// }
 
 function updateMinMax() {
   minRange = document.querySelector('#min-input').value;
