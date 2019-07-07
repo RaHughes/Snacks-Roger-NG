@@ -79,6 +79,14 @@ document.getElementById('name-two').addEventListener('keypress', function () {
     resetBtn.style.backgroundColor='#6e6e6e';
     resetBtn.disabled = false;
 });
+document.getElementById('min-input').addEventListener('keypress', function () {
+    resetBtn.style.backgroundColor='#6e6e6e';
+    resetBtn.disabled = false;
+});
+document.getElementById('max-input').addEventListener('keypress', function () {
+    resetBtn.style.backgroundColor='#6e6e6e';
+    resetBtn.disabled = false;
+});
 
 
 function updateMinMax() {
