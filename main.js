@@ -10,6 +10,8 @@ var nameTwo = document.querySelector('#name-two').value;
 var guessOne = document.querySelector('#guess-one').value;
 var guessTwo = document.querySelector('#guess-two').value;
 var submitBtn = document.querySelector('.guesser-challenger-buttons-guess');
+var restBtn
+var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
 
 // Variable Results Lastest Score
 
@@ -20,6 +22,13 @@ updateBtn.addEventListener('click', function() {
   document.querySelector('.span-one').innerHTML = minRange
   document.querySelector('.span-two').innerHTML = maxRange
 })
+
+clearBtn.addEventListener('click', function(){
+  document.querySelector('#guess-one').value = ''
+  document.querySelector('#guess-two').value = ''
+  console.log('clear button is working!')
+});
+
 
 function updateMinMax() {
   minRange = document.querySelector('#min-input').value;
@@ -52,6 +61,7 @@ function randomNum(min, max) {
     min = parseInt(min);
     max = parseInt(max);
     randoNum = Math.floor(Math.random() * (max - min) + min);
+    console.log(randoNum)
     if(randoNum === 0) {
       randoNum = randoNum + 1;
     } 
