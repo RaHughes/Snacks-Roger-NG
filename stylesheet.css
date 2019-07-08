@@ -66,7 +66,7 @@ strong {
 	flex: 1;
 	background-color: #f7f7f7;
 	justify-content: center;
-	max-width:615px; 
+	max-width:50%; 
 	min-width:516px;
 }
 .guesser-range {
@@ -232,9 +232,6 @@ span {
 	font-size: 17px;
 	padding: 7px;
 }
-.guesser-challenger-buttons-reset:hover {
-	background-color: #DD1972;
-}
 .guesser-challenger-buttons-clear {
 	border-radius: 40px;
 	background-color: #d0d2d3;
@@ -246,8 +243,8 @@ span {
 	padding: 7px;
 	margin-right: 3%;
 }
-.guesser-challenger-buttons-clear:hover {
-	background-color: #DD1972;
+.clear:hover {
+	background-color: #DD1972 !important;
 }
 .guesser-score {
 	display: flex;
@@ -261,6 +258,10 @@ span {
 	margin-bottom: 50px;
 	height: 200px;
 /*	padding: 30px;*/
+}
+.reset:hover {
+	background-color: #DD1972 !important;
+}
 
 /********** Guesser Score ***********/
 
