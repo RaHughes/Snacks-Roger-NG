@@ -13,8 +13,10 @@ var guessOne = document.querySelector('#guess-one').value;
 var guessTwo = document.querySelector('#guess-two').value;
 var guessTwoInput = document.getElementById('#guess-two');
 var submitBtn = document.querySelector('.guesser-challenger-buttons-guess');
-var resetBtn = document.querySelector('.guesser-challenger-buttons-reset')
+var resetBtn = document.querySelector('.guesser-challenger-buttons-reset');
+var addToReset = document.querySelector('.guesser-challenger-buttons-reset');
 var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
+var addToClear = document.querySelector('.guesser-challenger-buttons-clear');
 var guessInputs = document.querySelectorAll('guess-one','guess-two')
 var guessCount = 0
 var startTime
@@ -35,6 +37,7 @@ clearBtn.addEventListener('click', function(){
   document.querySelector('#guess-two').value = ''
   clearBtn.disabled = true;
   clearBtn.style.backgroundColor='#d0d2d3';
+  addToClear.classList.remove('clear');
   console.log('clear button is working!')
 });
 
@@ -56,6 +59,7 @@ resetBtn.addEventListener('click', function() {
   console.log('Reset button is working?')
   resetBtn.disabled = true;
   resetBtn.style.backgroundColor='#d0d2d3';
+  addToReset.classList.remove('reset');
 });
 
 // Guess Counter Function
@@ -67,28 +71,34 @@ function guessCounter() {
 // Button disable functionality
 clearBtn.disabled = true;
 document.getElementById('guess-one').addEventListener('keypress', function () {
+    addToClear.classList.add('clear');
     clearBtn.style.backgroundColor='#6e6e6e';
     clearBtn.disabled = false;
 });
 document.getElementById('guess-two').addEventListener('keypress', function () {
+    addToClear.classList.add('clear');
     clearBtn.style.backgroundColor='#6e6e6e';
     clearBtn.disabled = false;
 });
 
 resetBtn.disabled = true;
 document.getElementById('name-one').addEventListener('keypress', function () {
+    addToReset.classList.add('reset');
     resetBtn.style.backgroundColor='#6e6e6e';
     resetBtn.disabled = false;
 });
 document.getElementById('name-two').addEventListener('keypress', function () {
+    addToReset.classList.add('reset');
     resetBtn.style.backgroundColor='#6e6e6e';
     resetBtn.disabled = false;
 });
 document.getElementById('min-input').addEventListener('keypress', function () {
+    addToReset.classList.add('reset');
     resetBtn.style.backgroundColor='#6e6e6e';
     resetBtn.disabled = false;
 });
 document.getElementById('max-input').addEventListener('keypress', function () {
+    addToReset.classList.add('reset');
     resetBtn.style.backgroundColor='#6e6e6e';
     resetBtn.disabled = false;
 });
