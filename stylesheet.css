@@ -382,6 +382,10 @@ span {
 	color: #6E6E6E;
 }
 
+#guessNumber {
+	font-weight: 700;
+}
+
 .results-cards-stats-minutes {
 	margin-right: 8%;
 	color: #6E6E6E;

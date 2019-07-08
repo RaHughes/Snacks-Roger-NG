@@ -16,6 +16,9 @@ var submitBtn = document.querySelector('.guesser-challenger-buttons-guess');
 var resetBtn = document.querySelector('.guesser-challenger-buttons-reset')
 var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
 var guessInputs = document.querySelectorAll('guess-one','guess-two')
+var guessCount = 0
+var startTime
+var endTime
 // Variable Results Lastest Score
 var results = document.querySelector('.results')
 // Function Guesser Range
@@ -54,6 +57,12 @@ resetBtn.addEventListener('click', function() {
   resetBtn.style.backgroundColor='#d0d2d3';
 });
 
+// Guess Counter Function
+function guessCounter() {
+  guessCount += 1
+  console.log('guessCount: ', guessCount)
+}
+
 // Button disable functionality
 clearBtn.disabled = true;
 document.getElementById('guess-one').addEventListener('keypress', function () {
@@ -64,14 +73,7 @@ document.getElementById('guess-two').addEventListener('keypress', function () {
     clearBtn.style.backgroundColor='#6e6e6e';
     clearBtn.disabled = false;
 });
-// I tried to create a for loop for this: ------------
-// for (var i=0; i<guessInputs.length; i++){
-//   console.log(guessInputs[i])
-//   document.getElementById(guessInputs[i]).addEventListener('keypress', function () {
-//     clearBtn.style.backgroundColor='#6e6e6e';
-//     clearBtn.disabled = false;
-//     });
-// }
+
 resetBtn.disabled = true;
 document.getElementById('name-one').addEventListener('keypress', function () {
     resetBtn.style.backgroundColor='#6e6e6e';
@@ -99,6 +101,7 @@ function updateMinMax() {
 // Function Guesser Challenger
 submitBtn.addEventListener('click', function () {
   getNameGuess();
+  guessCounter();
   console.log(nameOne, nameTwo);
   document.querySelector('#current-challenger-one').innerHTML = nameOne;
   document.querySelector('#current-challenger-two').innerHTML = nameTwo;
@@ -161,11 +164,13 @@ function randomNum(min, max) {
     userGuessTwo = parseInt(guessTwo);
     if(userGuessOne === randoNum) {
       buildCard(nameOne)
+      guessCount = 0
       console.log('Player 1 wins!');
     } 
 
     if(userGuessTwo === randoNum) {
       buildCard(nameTwo)
+      guessCount = 0
       console.log('Player 2 wins!');
     }
   }
@@ -185,7 +190,7 @@ function randomNum(min, max) {
       </div class="results-cards-lines">
       <hr class="results-cards-lines">
       <div class="results-cards-stats">
-        <p class="results-cards-stats-guesses">${'GUESSES'}</p>
+        <p class="results-cards-stats-guesses"><span id="guessNumber">${guessCount.toString()}</span> GUESSES</p>
         <p class="results-cards-stats-minutes">${'MINUTES'}</p>
         <buttom class="results-cards-stats-exit-button">X</buttom>
       </div>
