@@ -18,7 +18,8 @@ var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
 var guessInputs = document.querySelectorAll('guess-one','guess-two')
 var guessCount = 0
 var startTime
-var endTime
+var timeElapsed
+var timerOn = false
 // Variable Results Lastest Score
 var results = document.querySelector('.results')
 // Function Guesser Range
@@ -111,6 +112,11 @@ submitBtn.addEventListener('click', function () {
   compareResults2(randoNum, guessTwo);
   console.log('type of:', typeof(guessOne))
   checkForWinner(randoNum, guessOne, guessTwo);
+  if (timerOn === false){
+    startTime = Date.now();
+    timerOn = true
+  }
+  console.log('line 119 - timerOn: ', timerOn)
 });
 
 
@@ -163,16 +169,29 @@ function randomNum(min, max) {
     userGuessOne = parseInt(guessOne);
     userGuessTwo = parseInt(guessTwo);
     if(userGuessOne === randoNum) {
+      getTime(startTime)
       buildCard(nameOne)
       guessCount = 0
       console.log('Player 1 wins!');
     } 
 
     if(userGuessTwo === randoNum) {
+      getTime(startTime)
       buildCard(nameTwo)
       guessCount = 0
       console.log('Player 2 wins!');
     }
+  }
+
+  function getTime(timeStart) {
+    var milliSeconds = Date.now() - startTime
+    var seconds = (Math.floor(milliSeconds/1000))
+    var minutes = (seconds/60)
+    var minutesWithDec = minutes.toFixed(2)
+    timerOn = false
+    console.log('minutesWithDec: ', minutesWithDec)
+    console.log('timerOn: ', timerOn)
+    return timeElapsed = minutesWithDec
   }
   
   function buildCard(winner) {
@@ -191,7 +210,7 @@ function randomNum(min, max) {
       <hr class="results-cards-lines">
       <div class="results-cards-stats">
         <p class="results-cards-stats-guesses"><span id="guessNumber">${guessCount.toString()}</span> GUESSES</p>
-        <p class="results-cards-stats-minutes">${'MINUTES'}</p>
+        <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed} MINUTES</span></p>
         <buttom class="results-cards-stats-exit-button">X</buttom>
       </div>
     </section>`)
