@@ -71,47 +71,66 @@ strong {
 	max-width:50%; 
 	min-width:516px;
 }
-.guesser-range {
+.guesser-range{
 	display: flex;
 	flex-direction: column;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 	border: 2px solid #d0d2d3;
 	margin: 10px;
-	padding: 20px;
-	width: 85%;
-	height: 10%;
+	width: 90%;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 50px;
+	margin-bottom: 25px;
+
 }
-.guesser-range-h2 {
-	margin-top: 0px;
-	color: #6e6e6e;
+.guesser-range-h2{
+	font-weight: 700;
+	font-size: 18px;
+	color: #404041;
+	margin: 5px;
 }
-.guesser-range-row {
+.guesser-range-row{
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	margin-bottom: 20px;
+	align-items: center;
 }
-.guesser-range-min-max {
+.guesser-range-row-container{
+	display: flex;
+	flex-direction: column;
+	width: 27%;
+	margin-left: 5%;
+}
+.guess-range-row-container-2{
+	display: flex;
+	flex-direction: column;
+	width: 27%;
+	margin-left: 3%
+}
+.guesser-range-min-max{
 	color: #6e6e6e;
 	font-size: 18px;
 }
-.guesser-range-input {
-	width: 120%;
-	height: 40%;
+.guesser-range-input{
+	width:100%;
+	height: 25px;
 }
-.guesser-range-button {
-	height: 50px;
-	width: 150px;
-	border-radius: 40px 40px 40px 40px;
-	background-color: #6e6e6e;
-	font-weight: 700;
-	color: #ffffff;
-	font-size: 22px;
+.guesser-range-button{
+  border-radius: 40px;
+  background-color: #6e6e6e;
+  height: 37%;
+  width: 30%;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 7px;
+  margin-left: 4%;
+  margin-top: 4%;
 }
 .guesser-range-button:hover {
 	background-color: #DD1972;
 }
+
+
 .guesser-challenger {
 	display: flex;
 	flex-direction: column;
@@ -280,8 +299,8 @@ span {
 	margin: 10px;
 	width: 90%;
 	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 	height: 200px;
 }
 
