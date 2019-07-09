@@ -7,7 +7,8 @@ var updateBtn = document.querySelector('.guesser-range-button')
 var randoNum 
 
 // Variable Guesser Challenger
-var spanOne = document.querySelector('.span-one').value
+var spanOne = document.querySelector('.span-one').value;
+console.log('line 11: ', spanOne)
 var spanTwo = document.querySelector('.span-two').value;
 var nameOne = document.querySelector('#name-one').value;
 var nameTwo = document.querySelector('#name-two').value;
@@ -30,6 +31,7 @@ var timeElapsed
 var timerOn = false
 // Variable Results Lastest Score
 var results = document.querySelector('.results')
+
 // Function Guesser Range
 updateBtn.addEventListener('click', function() {
   updateMinMax();
@@ -178,88 +180,85 @@ function randomNum(min, max) {
     min = parseInt(min);
     max = parseInt(max);
     randoNum = Math.floor(Math.random() * (max - min) + min);
-    console.log(randoNum)
-    if(randoNum === 0) {
-      randoNum = randoNum + 1;
-    } 
     console.log('randoNum: ', randoNum);
-    return randoNum;
 }
 
-  function compareResults1(randomNumber, userGuess) {
-    userGuess = parseInt(userGuess)
-    console.log('type of line 63:', typeof(guessOne))
-    if(userGuess === randomNumber) {
-      document.querySelector('.result-one').innerHTML = 'BOOM';
-    } else if(userGuess > randomNumber) {
-      document.querySelector('.result-one').innerHTML = 'That\'s too high!';
-    } else if(userGuess < randomNumber) {
-      document.querySelector('.result-one').innerHTML = 'That\'s too low!';
-    }
-  }
+randomNum(minRange, maxRange);
 
-  function compareResults2(randomNumber, userGuess) {
-    userGuess = parseInt(userGuess)
-    if(userGuess === randomNumber) {
-      document.querySelector('.result-two').innerHTML = 'BOOM';
-    } else if(userGuess > randomNumber) {
-      document.querySelector('.result-two').innerHTML = 'That\'s too high!';
-    } else if(userGuess < randomNumber) {
-      document.querySelector('.result-two').innerHTML = 'That\'s too low!';
-    }
+function compareResults1(randomNumber, userGuess) {
+  userGuess = parseInt(userGuess)
+  console.log('type of line 63:', typeof(guessOne))
+  if(userGuess === randomNumber) {
+    document.querySelector('.result-one').innerHTML = 'BOOM';
+  } else if(userGuess > randomNumber) {
+    document.querySelector('.result-one').innerHTML = 'That\'s too high!';
+  } else if(userGuess < randomNumber) {
+    document.querySelector('.result-one').innerHTML = 'That\'s too low!';
   }
+}
 
-  // Function Reults
-  function checkForWinner(randoNum, guessOne, guessTwo) {
-    console.log('Is working', document.querySelector('.result-one').value);
-    userGuessOne = parseInt(guessOne);
-    userGuessTwo = parseInt(guessTwo);
-    if(userGuessOne === randoNum) {
-      getTime(startTime)
-      buildCard(nameOne)
-      guessCount = 0
-      console.log('Player 1 wins!');
-    } 
-
-    if(userGuessTwo === randoNum) {
-      getTime(startTime)
-      buildCard(nameTwo)
-      guessCount = 0
-      console.log('Player 2 wins!');
-    }
+function compareResults2(randomNumber, userGuess) {
+  userGuess = parseInt(userGuess)
+  if(userGuess === randomNumber) {
+    document.querySelector('.result-two').innerHTML = 'BOOM';
+  } else if(userGuess > randomNumber) {
+    document.querySelector('.result-two').innerHTML = 'That\'s too high!';
+  } else if(userGuess < randomNumber) {
+    document.querySelector('.result-two').innerHTML = 'That\'s too low!';
   }
+}
 
-  function getTime(timeStart) {
-    var milliSeconds = Date.now() - startTime
-    var seconds = (Math.floor(milliSeconds/1000))
-    var minutes = (seconds/60)
-    var minutesWithDec = minutes.toFixed(2)
-    timerOn = false
-    console.log('minutesWithDec: ', minutesWithDec)
-    console.log('timerOn: ', timerOn)
-    return timeElapsed = minutesWithDec
+// Function Reults
+function checkForWinner(randoNum, guessOne, guessTwo) {
+  console.log('Is working', document.querySelector('.result-one').value);
+  userGuessOne = parseInt(guessOne);
+  userGuessTwo = parseInt(guessTwo);
+  if(userGuessOne === randoNum) {
+    getTime(startTime)
+    buildCard(nameOne)
+    guessCount = 0
+    console.log('Player 1 wins!');
+  } 
+
+  if(userGuessTwo === randoNum) {
+    getTime(startTime)
+    buildCard(nameTwo)
+    guessCount = 0
+    console.log('Player 2 wins!');
   }
-  
-  function buildCard(winner) {
-  results.insertAdjacentHTML('afterbegin', `
+}
+
+function getTime(timeStart) {
+  var milliSeconds = Date.now() - startTime
+  var seconds = (Math.floor(milliSeconds/1000))
+  var minutes = (seconds/60)
+  var minutesWithDec = minutes.toFixed(2)
+  timerOn = false
+  console.log('minutesWithDec: ', minutesWithDec)
+  console.log('timerOn: ', timerOn)
+  return timeElapsed = minutesWithDec
+}
+
+function buildCard(winner) {
+results.insertAdjacentHTML('afterbegin', `
   <section class="results-cards">
-      <div class="results-cards-challengers">
-        <h4 class="results-cards-challengers challanger-1"> ${nameOne} </h4>
-        <p class="results-cards-challengers-vs"> vs </p>
-        <h4 class="results-cards-challengers challanger-2"> ${nameTwo} </h4>
-      </div>
-      <hr class="results-cards-lines">
-      <div class="results-cards-winner">
-        <p class="results-cards-winner-name">${winner}</p>
-        <P class="results-cards-winner-winner" >WINNER</P>
-      </div class="results-cards-lines">
-      <hr class="results-cards-lines">
-      <div class="results-cards-stats">
-        <p class="results-cards-stats-guesses"><span id="guessNumber">${guessCount.toString()}</span> GUESSES</p>
-        <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed} MINUTES</span></p>
-        <buttom class="results-cards-stats-exit-button">X</buttom>
-      </div>
-    </section>`)
+    <div class="results-cards-challengers">
+      <h4 class="results-cards-challengers challanger-1"> ${nameOne} </h4>
+      <p class="results-cards-challengers-vs"> vs </p>
+      <h4 class="results-cards-challengers challanger-2"> ${nameTwo} </h4>
+    </div>
+    <hr class="results-cards-lines">
+    <div class="results-cards-winner">
+      <p class="results-cards-winner-name">${winner}</p>
+      <P class="results-cards-winner-winner" >WINNER</P>
+    </div class="results-cards-lines">
+    <hr class="results-cards-lines">
+    <div class="results-cards-stats">
+      <p class="results-cards-stats-guesses"><span id="guessNumber">${guessCount.toString()}</span> GUESSES</p>
+      <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed} MINUTES</span></p>
+      <buttom class="results-cards-stats-exit-button">X</buttom>
+    </div>
+  </section>`)
 };
 
 // import { html, render } from './lit-html.js';
