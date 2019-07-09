@@ -207,6 +207,13 @@ span {
 	/*padding: 30px;*/
 	width: 100%;
 }
+.guesser-challenger-error-image{
+	height: 13px;
+}
+.GCNE {
+	font-size: 15px;
+	color: #DD1972;
+}
 .guesser-challenger-buttons {
 	display: flex;
 	flex-direction: row;
@@ -257,6 +264,12 @@ span {
 .clear:hover {
 	background-color: #DD1972 !important;
 }
+
+.reset:hover {
+	background-color: #DD1972 !important;
+}
+
+/********** Guesser Score ***********/
 .guesser-score {
 	display: flex;
 	flex-direction: column;
@@ -268,19 +281,8 @@ span {
 	margin-top: 50px;
 	margin-bottom: 50px;
 	height: 200px;
-/*	padding: 30px;*/
-}
-.reset:hover {
-	background-color: #DD1972 !important;
 }
 
-/********** Guesser Score ***********/
-
-}
-.guesser-score {
-	display: flex;
-	flex-direction: column;
-}
 .guesser-score-h2 {
 	font-weight: 700;
 	font-size: 18px;
