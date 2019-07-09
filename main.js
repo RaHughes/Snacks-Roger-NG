@@ -24,13 +24,13 @@ var resetBtn = document.querySelector('.guesser-challenger-buttons-reset');
 var addToReset = document.querySelector('.guesser-challenger-buttons-reset');
 var clearBtn = document.querySelector('.guesser-challenger-buttons-clear');
 var addToClear = document.querySelector('.guesser-challenger-buttons-clear');
-var guessInputs = document.querySelectorAll('guess-one','guess-two')
-var guessCount = 0
-var startTime
-var timeElapsed
-var timerOn = false
+var guessInputs = document.querySelectorAll('guess-one','guess-two');
+var guessCount = 0;
+var startTime;
+var timeElapsed;
+var timerOn = false;
 // Variable Results Lastest Score
-var results = document.querySelector('.results')
+var results = document.querySelector('.results');
 
 // Function Guesser Range
 updateBtn.addEventListener('click', function() {
