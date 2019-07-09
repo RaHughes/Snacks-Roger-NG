@@ -150,11 +150,22 @@ span {
 	/*margin-left: 5%;*/
 	color: #6e6e6e;
 	font-size: 18px;
-
+}
+.name-error-one {
+	border: 2px solid #DD1972;
+}
+.name-error-two {
+	border: 2px solid #DD1972;
 }
 .guesser-challenger-player-guess {
 	color: #6e6e6e;
 	font-size: 18px;
+}
+.guess-error-one {
+	border: 2px solid #DD1972;
+}
+.guess-error-two {
+	border: 2px solid #DD1972;
 }
 .guesser-player-challenger-div {
 	display: flex;
