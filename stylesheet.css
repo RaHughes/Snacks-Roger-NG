@@ -8,7 +8,9 @@
 * {
 	/*border: 2px solid red;*/
 }
-
+button, input[type="button"]{
+	outline: none;
+}
 /********** Header ************/
 .header {
 	display: flex;
@@ -417,4 +419,16 @@ span {
 .results-cards-lines {
 	margin: 0px 20px 0px 20px;
 	color: #404041;
+}
+
+
+
+input[type="text"],
+input[type="number"] {
+	outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+	border-color: #D0D2D3;
 }
