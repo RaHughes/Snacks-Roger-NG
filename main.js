@@ -84,39 +84,28 @@ function guessCounter() {
 }
 
 // Button disable functionality
-clearBtn.disabled = true;
-document.getElementById('guess-one').addEventListener('keypress', function () {
-    addToClear.classList.add('clear');
-    clearBtn.style.backgroundColor='#6e6e6e';
-    clearBtn.disabled = false;
-});
-document.getElementById('guess-two').addEventListener('keypress', function () {
-    addToClear.classList.add('clear');
-    clearBtn.style.backgroundColor='#6e6e6e';
-    clearBtn.disabled = false;
-});
 
+function clearBtnDisable(){
+  addToClear.classList.add('clear');
+    clearBtn.style.backgroundColor='#6e6e6e';
+    clearBtn.disabled = false;
+}
+
+clearBtn.disabled = true;
+document.getElementById('guess-one').addEventListener('keypress', clearBtnDisable);
+document.getElementById('guess-two').addEventListener('keypress', clearBtnDisable);
+
+
+function resetBtnDisable() {
+  addToReset.classList.add('reset');
+    resetBtn.style.backgroundColor='#6e6e6e';
+    resetBtn.disabled = false;
+}
 resetBtn.disabled = true;
-document.getElementById('name-one').addEventListener('keypress', function () {
-    addToReset.classList.add('reset');
-    resetBtn.style.backgroundColor='#6e6e6e';
-    resetBtn.disabled = false;
-});
-document.getElementById('name-two').addEventListener('keypress', function () {
-    addToReset.classList.add('reset');
-    resetBtn.style.backgroundColor='#6e6e6e';
-    resetBtn.disabled = false;
-});
-document.getElementById('min-input').addEventListener('keypress', function () {
-    addToReset.classList.add('reset');
-    resetBtn.style.backgroundColor='#6e6e6e';
-    resetBtn.disabled = false;
-});
-document.getElementById('max-input').addEventListener('keypress', function () {
-    addToReset.classList.add('reset');
-    resetBtn.style.backgroundColor='#6e6e6e';
-    resetBtn.disabled = false;
-});
+document.getElementById('name-one').addEventListener('keypress', resetBtnDisable;
+document.getElementById('name-two').addEventListener('keypress', resetBtnDisable;
+document.getElementById('min-input').addEventListener('keypress', resetBtnDisable;
+document.getElementById('max-input').addEventListener('keypress', resetBtnDisable;
 
 
 function updateMinMax() {
