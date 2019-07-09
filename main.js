@@ -102,10 +102,10 @@ function resetBtnDisable() {
     resetBtn.disabled = false;
 }
 resetBtn.disabled = true;
-document.getElementById('name-one').addEventListener('keypress', resetBtnDisable;
-document.getElementById('name-two').addEventListener('keypress', resetBtnDisable;
-document.getElementById('min-input').addEventListener('keypress', resetBtnDisable;
-document.getElementById('max-input').addEventListener('keypress', resetBtnDisable;
+document.getElementById('name-one').addEventListener('keypress', resetBtnDisable);
+document.getElementById('name-two').addEventListener('keypress', resetBtnDisable);
+document.getElementById('min-input').addEventListener('keypress', resetBtnDisable);
+document.getElementById('max-input').addEventListener('keypress', resetBtnDisable);
 
 
 function updateMinMax() {
@@ -218,7 +218,7 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
 }
 
 function getTime(timeStart) {
-  var milliSeconds = Date.now() - startTime
+  var milliSeconds = Date.now() - timeStart
   var seconds = (Math.floor(milliSeconds/1000))
   var minutes = (seconds/60)
   var minutesWithDec = minutes.toFixed(2)
