@@ -2,7 +2,11 @@
 
 // Variable Guesser Range
 var minRange = document.querySelector('#min-input').value;
+var minRangeAlert = document.querySelector('.min');
+var minRangeText = document.querySelector('.guesser-range-input-one');
 var maxRange = document.querySelector('#max-input').value;
+var maxRangeAlert = document.querySelector('.max');
+var maxRangeText = document.querySelector('.guesser-range-input-two');
 var updateBtn = document.querySelector('.guesser-range-button')
 var randoNum 
 
@@ -13,9 +17,13 @@ var spanTwo = document.querySelector('.span-two').value;
 var nameOne = document.querySelector('#name-one').value;
 var nameTwo = document.querySelector('#name-two').value;
 var nameOneAlert = document.querySelector('.name-one-alert');
+var gcneOne = document.querySelector('.guesser-challenger-name-error-one');
 var nameTwoAlert = document.querySelector('.name-two-alert');
+var gcneTwo = document.querySelector('.guesser-name-error-two');
 var guessOne = document.querySelector('#guess-one').value;
+var gcgeOne = document.querySelector('.guesser-number-error-one')
 var guessTwo = document.querySelector('#guess-two').value;
+var gcgeTwo = document.querySelector('.guesser-number-error-two')
 var guessOneAlert = document.querySelector('.guess-one-alert');
 var guessTwoAlert = document.querySelector('.guess-two-alert');
 var guessTwoInput = document.getElementById('#guess-two');
@@ -35,9 +43,13 @@ var results = document.querySelector('.results');
 // Function Guesser Range
 updateBtn.addEventListener('click', function() {
   updateMinMax();
+  checkRangeInput()
   randomNum(minRange, maxRange);
   document.querySelector('.span-one').innerHTML = minRange
   document.querySelector('.span-two').innerHTML = maxRange
+  updateBtn.disabled = true;
+  clearBtn.style.backgroundColor='#d0d2d3';
+  addToClear.classList.remove('clear');
 })
 
 clearBtn.addEventListener('click', function(){
@@ -48,6 +60,8 @@ clearBtn.addEventListener('click', function(){
   addToClear.classList.remove('clear');
   guessOneAlert.classList.remove('guess-error-one');
   guessTwoAlert.classList.remove('guess-error-two');
+  gcgeOne.classList.remove('gcge-one');
+  gcgeTwo.classList.remove('gcge-two'); 
   console.log('clear button is working!')
 });
 
@@ -74,9 +88,40 @@ resetBtn.addEventListener('click', function() {
   guessTwoAlert.classList.remove('guess-error-two');
   nameOneAlert.classList.remove('name-error-one');
   nameTwoAlert.classList.remove('name-error-two');
-
+  gcgeOne.classList.remove('gcge-one');
+  gcgeTwo.classList.remove('gcge-two');
+  gcneOne.classList.remove('gcne-one');
+  gcneTwo.classList.remove('gcne-two');
+  minRangeAlert.classList.remove('min-range-alert')
+  maxRangeAlert.classList.remove('min-range-alert')
+  minRangeText.classList.remove('gcne-one')
+  maxRangeText.classList.remove('gcne-one')
+  disableButtons();
+  randomNum(minRange, maxRange);
+  
 });
 
+function disableButtons() {
+  if(resetBtn.disabled = true) {
+  clearBtn.disabled = true;
+  clearBtn.style.backgroundColor='#d0d2d3';
+  addToClear.classList.remove('clear');
+  guessOneAlert.classList.remove('guess-error-one');
+  guessTwoAlert.classList.remove('guess-error-two');
+  gcgeOne.classList.remove('gcge-one');
+  gcgeTwo.classList.remove('gcge-two'); 
+  console.log('clear button is working!')
+  }
+}
+// Range Error
+function checkRangeInput() {
+  if(parseInt(minRange) >= parseInt(maxRange)) {
+    minRangeAlert.classList.add('min-range-alert')
+    maxRangeAlert.classList.add('min-range-alert')
+    minRangeText.classList.add('gcne-one')
+    maxRangeText.classList.add('gcne-one')
+  }
+}
 // Guess Counter Function
 function guessCounter() {
   guessCount += 1
@@ -91,10 +136,14 @@ function clearBtnDisable(){
     clearBtn.disabled = false;
 }
 
+var guesserChallangerParent = document.querySelector('.guesser-challenger')
+var guesserRangeParent = document.querySelector('.guesser-range')
 clearBtn.disabled = true;
-document.getElementById('guess-one').addEventListener('keypress', clearBtnDisable);
-document.getElementById('guess-two').addEventListener('keypress', clearBtnDisable);
-
+guesserChallangerParent.addEventListener('keypress', function(event){
+  if (event.target.id === 'guess-one' || event.target.id === 'guess-two'){
+      clearBtnDisable();
+  }
+})
 
 function resetBtnDisable() {
   addToReset.classList.add('reset');
@@ -102,11 +151,25 @@ function resetBtnDisable() {
     resetBtn.disabled = false;
 }
 resetBtn.disabled = true;
-document.getElementById('name-one').addEventListener('keypress', resetBtnDisable);
-document.getElementById('name-two').addEventListener('keypress', resetBtnDisable);
-document.getElementById('min-input').addEventListener('keypress', resetBtnDisable);
-document.getElementById('max-input').addEventListener('keypress', resetBtnDisable);
+updateBtn.disabled = true;
+guesserChallangerParent.addEventListener('keypress', function(event){
+  if (event.target.id === 'name-one' || event.target.id === 'name-two'){
+      resetBtnDisable();
+  }
+})
 
+guesserRangeParent.addEventListener('keypress', function(event){
+  if (event.target.id === 'min-input' || event.target.id === 'max-input'){
+      resetBtnDisable();
+      updateBtnDisable();
+  }
+})
+
+function updateBtnDisable() {
+  updateBtn.classList.add('clear');
+  updateBtn.style.backgroundColor='#6e6e6e';
+  updateBtn.disabled = false;
+}
 
 function updateMinMax() {
   minRange = document.querySelector('#min-input').value;
@@ -116,48 +179,66 @@ function updateMinMax() {
 // Function Guesser Challenger
 submitBtn.addEventListener('click', function () {
   getNameGuess();
-  guessCounter();
   checkInputFields();
-  console.log('line 121', nameOne.length, nameTwo.length);
-  document.querySelector('#current-challenger-one').innerHTML = nameOne;
-  document.querySelector('#current-challenger-two').innerHTML = nameTwo;
-  document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
-  document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
-  compareResults1(randoNum, guessOne);
-  compareResults2(randoNum, guessTwo);
-  console.log('type of:', typeof(guessOne))
-  checkForWinner(randoNum, guessOne, guessTwo);
-  if (timerOn === false){
-    startTime = Date.now();
-    timerOn = true
-  }
-  console.log('line 119 - timerOn: ', timerOn)
+  // console.log('line 121', nameOne.length, nameTwo.length);
+if ((parseInt(guessOne) >= parseInt(minRange)) && (parseInt(guessOne) <= parseInt(maxRange)) && 
+    (parseInt(guessTwo) >= parseInt(minRange)) && (parseInt(guessTwo) <= parseInt(maxRange)) &&
+    (nameOne.length > 0) && (nameTwo.length > 0)) {
+    document.querySelector('#current-challenger-one').innerHTML = nameOne;
+    document.querySelector('#current-challenger-two').innerHTML = nameTwo;
+    document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
+    document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
+    compareResults1(randoNum, guessOne);
+    compareResults2(randoNum, guessTwo);
+    checkForWinner(randoNum, guessOne, guessTwo);
+    guessCounter();
+  
+    console.log('type of:', typeof(guessOne))
+    if (timerOn === false){
+      startTime = Date.now();
+      timerOn = true
+    }
+    console.log('line 119 - timerOn: ', timerOn)
+};
+});
+
+submitBtn.addEventListener('click', function() {
+  getNameGuess();
+  checkInputFields();
+
 });
 
 function checkInputFields() {
   console.log('checkInputFields working');
   console.log(guessOne, spanOne);
-  if(parseInt(guessOne) < parseInt(minRange) || parseInt(guessOne) > parseInt(maxRange)) {
+  if(parseInt(guessOne) < parseInt(minRange) || parseInt(guessOne) > parseInt(maxRange) || (guessOne.length === 0)) {
     guessOneAlert.classList.add('guess-error-one')
     // document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = '0'
     document.querySelector('#guess-one').value = ''
+    gcgeOne.classList.add('gcge-one')
   };
-  if(parseInt(guessTwo) < parseInt(minRange)|| parseInt(guessTwo) > parseInt(maxRange)) {
+  if(parseInt(guessTwo) < parseInt(minRange)|| parseInt(guessTwo) > parseInt(maxRange) || (guessTwo.length === 0)) {
     guessTwoAlert.classList.add('guess-error-two')
     document.querySelector('#guess-two').value = ''
     // document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = '0'
+    gcgeTwo.classList.add('gcge-two')
   };
   if(nameOne.length === 0) {
     nameOneAlert.classList.add('name-error-one')
     document.querySelector('#name-one').value = ''
+    gcneOne.classList.add('gcne-one');
   };
   if(nameTwo.length === 0) {
     nameTwoAlert.classList.add('name-error-two')
     document.querySelector('#name-two').value = ''
+    gcneTwo.classList.add('gcne-two');
   };
+
 };
 
+
 function getNameGuess() {
+  console.log('Updating values of input fields');
     nameOne = document.querySelector('#name-one').value;
     nameTwo = document.querySelector('#name-two').value;
     guessOne = document.querySelector('#guess-one').value;
@@ -228,6 +309,15 @@ function getTime(timeStart) {
   return timeElapsed = minutesWithDec
 }
 
+// var xButtonParent = document.querySelector('.results');
+// xButtonParent.addEventListener('click', function(event){
+//   console.log('I want to take away this box!!')
+//   if (event.target.className === 'results-cards-stats-exit-button'){
+//     console.log('take away this box!!')
+//   }
+// })
+
+
 function buildCard(winner) {
 results.insertAdjacentHTML('afterbegin', `
   <section class="results-cards">
@@ -238,7 +328,7 @@ results.insertAdjacentHTML('afterbegin', `
     </div>
     <hr class="results-cards-lines">
     <div class="results-cards-winner">
-      <p class="results-cards-winner-name">${winner}</p>
+      <p class="results-cards-winner-name">${winner.toUpperCase()}</p>
       <P class="results-cards-winner-winner" >WINNER</P>
     </div class="results-cards-lines">
     <hr class="results-cards-lines">
@@ -250,4 +340,13 @@ results.insertAdjacentHTML('afterbegin', `
   </section>`)
 };
 
+function removeCard(event) {
+  if(event.target.closest('.results-cards-stats-exit-button')) {
+    event.target.closest('.results-cards').remove()
+  }
+}
+
+// Event Listener Results
+
+results.addEventListener('click', removeCard);
 // import { html, render } from './lit-html.js';
