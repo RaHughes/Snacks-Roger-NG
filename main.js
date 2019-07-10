@@ -93,7 +93,8 @@ resetBtn.addEventListener('click', function() {
   maxRangeAlert.classList.remove('min-range-alert')
   minRangeText.classList.remove('gcne-one')
   maxRangeText.classList.remove('gcne-one')
-  disableButtons()
+  disableButtons();
+  randomNum(minRange, maxRange);
   
 });
 
@@ -143,7 +144,6 @@ function clearBtnDisable(){
 
 var guesserChallangerParent = document.querySelector('.guesser-challenger')
 var guesserRangeParent = document.querySelector('.guesser-range')
-
 clearBtn.disabled = true;
 guesserChallangerParent.addEventListener('keypress', function(event){
   if (event.target.id === 'guess-one' || event.target.id === 'guess-two'){
@@ -174,6 +174,19 @@ guesserRangeParent.addEventListener('keypress', function(event){
   }
 })
 
+function updateBtnDisable() {
+  updateBtn.classList.add('reset');
+  updateBtn.style.backgroundColor='#6e6e6e';
+  updateBtn.disabled = false;
+}
+
+updateBtn.disabled = true;
+guesserRangeParent.addEventListener('click', function(event) {
+  if(event.target.className === 'guesser-range-button'){
+    updateBtnDisable();
+  }
+})
+
 
 // document.getElementById('name-one').addEventListener('keypress', resetBtnDisable);
 // document.getElementById('name-two').addEventListener('keypress', resetBtnDisable);
@@ -191,14 +204,13 @@ submitBtn.addEventListener('click', function () {
   getNameGuess();
   checkInputFields();
   // console.log('line 121', nameOne.length, nameTwo.length);
-  document.querySelector('#current-challenger-one').innerHTML = nameOne;
-  document.querySelector('#current-challenger-two').innerHTML = nameTwo;
-  document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
-  document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
-  if ((parseInt(guessOne) >= parseInt(minRange))) {
-    console.log('THIS FIRED OFF')
-   // && parseInt(guessOne) <= parseInt(maxRange))) {
-     // (parseInt(guessTwo) >= parseInt(minRange) && parseInt(guessTwo) <= parseInt(maxRange))) {
+if ((parseInt(guessOne) >= parseInt(minRange)) && (parseInt(guessOne) <= parseInt(maxRange)) && 
+    (parseInt(guessTwo) >= parseInt(minRange)) && (parseInt(guessTwo) <= parseInt(maxRange)) &&
+    (nameOne.length > 0) && (nameTwo.length > 0)) {
+    document.querySelector('#current-challenger-one').innerHTML = nameOne;
+    document.querySelector('#current-challenger-two').innerHTML = nameTwo;
+    document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
+    document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
     compareResults1(randoNum, guessOne);
     compareResults2(randoNum, guessTwo);
     checkForWinner(randoNum, guessOne, guessTwo);
@@ -213,16 +225,22 @@ submitBtn.addEventListener('click', function () {
 };
 });
 
+submitBtn.addEventListener('click', function() {
+  getNameGuess();
+  checkInputFields();
+
+});
+
 function checkInputFields() {
   console.log('checkInputFields working');
   console.log(guessOne, spanOne);
-  if(parseInt(guessOne) < parseInt(minRange) || parseInt(guessOne) > parseInt(maxRange)) {
+  if(parseInt(guessOne) < parseInt(minRange) || parseInt(guessOne) > parseInt(maxRange) || (guessOne.length === 0)) {
     guessOneAlert.classList.add('guess-error-one')
     // document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = '0'
     document.querySelector('#guess-one').value = ''
     gcgeOne.classList.add('gcge-one')
   };
-  if(parseInt(guessTwo) < parseInt(minRange)|| parseInt(guessTwo) > parseInt(maxRange)) {
+  if(parseInt(guessTwo) < parseInt(minRange)|| parseInt(guessTwo) > parseInt(maxRange) || (guessTwo.length === 0)) {
     guessTwoAlert.classList.add('guess-error-two')
     document.querySelector('#guess-two').value = ''
     // document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = '0'
@@ -243,6 +261,7 @@ function checkInputFields() {
 
 
 function getNameGuess() {
+  console.log('Updating values of input fields');
     nameOne = document.querySelector('#name-one').value;
     nameTwo = document.querySelector('#name-two').value;
     guessOne = document.querySelector('#guess-one').value;
@@ -332,7 +351,7 @@ results.insertAdjacentHTML('afterbegin', `
     </div>
     <hr class="results-cards-lines">
     <div class="results-cards-winner">
-      <p class="results-cards-winner-name">${winner}</p>
+      <p class="results-cards-winner-name">${winner.toUpperCase()}</p>
       <P class="results-cards-winner-winner" >WINNER</P>
     </div class="results-cards-lines">
     <hr class="results-cards-lines">
