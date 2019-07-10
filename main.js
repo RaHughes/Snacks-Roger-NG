@@ -93,7 +93,22 @@ resetBtn.addEventListener('click', function() {
   maxRangeAlert.classList.remove('min-range-alert')
   minRangeText.classList.remove('gcne-one')
   maxRangeText.classList.remove('gcne-one')
+  disableButtons()
+  
 });
+
+function disableButtons() {
+  if(resetBtn.disabled = true) {
+  clearBtn.disabled = true;
+  clearBtn.style.backgroundColor='#d0d2d3';
+  addToClear.classList.remove('clear');
+  guessOneAlert.classList.remove('guess-error-one');
+  guessTwoAlert.classList.remove('guess-error-two');
+  gcgeOne.classList.remove('gcge-one');
+  gcgeTwo.classList.remove('gcge-two'); 
+  console.log('clear button is working!')
+  }
+}
 // Range Error
 function checkRangeInput() {
   if(parseInt(minRange) >= parseInt(maxRange)) {
