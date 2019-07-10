@@ -313,13 +313,13 @@ function getTime(timeStart) {
   return timeElapsed = minutesWithDec
 }
 
-var xButtonParent = document.querySelector('.results');
-xButtonParent.addEventListener('click', function(event){
-  console.log('I want to take away this box!!')
-  if (event.target.className === 'results-cards-stats-exit-button'){
-    console.log('take away this box!!')
-  }
-})
+// var xButtonParent = document.querySelector('.results');
+// xButtonParent.addEventListener('click', function(event){
+//   console.log('I want to take away this box!!')
+//   if (event.target.className === 'results-cards-stats-exit-button'){
+//     console.log('take away this box!!')
+//   }
+// })
 
 
 function buildCard(winner) {
