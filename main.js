@@ -344,4 +344,13 @@ results.insertAdjacentHTML('afterbegin', `
   </section>`)
 };
 
+function removeCard(event) {
+  if(event.target.closest('.results-cards-stats-exit-button')) {
+    event.target.closest('.results-cards').remove()
+  }
+}
+
+// Event Listener Results
+
+results.addEventListener('click', removeCard);
 // import { html, render } from './lit-html.js';
