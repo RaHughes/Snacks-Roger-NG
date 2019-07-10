@@ -81,8 +81,11 @@ strong {
 	margin: auto;
 	margin-top: 50px;
 	margin-bottom: 25px;
-
 }
+.min-range-alert {
+	border: 2px solid #DD1972;
+}
+.
 .guesser-range-h2{
 	font-weight: 700;
 	font-size: 18px;
@@ -234,6 +237,19 @@ span {
 .GCNE {
 	font-size: 15px;
 	color: #DD1972;
+	visibility: hidden;
+}
+.gcne-one {
+	visibility: visible;
+}
+.gcne-two {
+	visibility: visible;
+}
+.gcge-one {
+	visibility: visible;
+}
+.gcge-two {
+	visibility: visible;
 }
 .guesser-challenger-buttons {
 	display: flex;

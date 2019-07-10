@@ -2,7 +2,11 @@
 
 // Variable Guesser Range
 var minRange = document.querySelector('#min-input').value;
+var minRangeAlert = document.querySelector('.min');
+var minRangeText = document.querySelector('.guesser-range-input-one');
 var maxRange = document.querySelector('#max-input').value;
+var maxRangeAlert = document.querySelector('.max');
+var maxRangeText = document.querySelector('.guesser-range-input-two');
 var updateBtn = document.querySelector('.guesser-range-button')
 var randoNum 
 
@@ -13,9 +17,13 @@ var spanTwo = document.querySelector('.span-two').value;
 var nameOne = document.querySelector('#name-one').value;
 var nameTwo = document.querySelector('#name-two').value;
 var nameOneAlert = document.querySelector('.name-one-alert');
+var gcneOne = document.querySelector('.guesser-challenger-name-error-one');
 var nameTwoAlert = document.querySelector('.name-two-alert');
+var gcneTwo = document.querySelector('.guesser-name-error-two');
 var guessOne = document.querySelector('#guess-one').value;
+var gcgeOne = document.querySelector('.guesser-number-error-one')
 var guessTwo = document.querySelector('#guess-two').value;
+var gcgeTwo = document.querySelector('.guesser-number-error-two')
 var guessOneAlert = document.querySelector('.guess-one-alert');
 var guessTwoAlert = document.querySelector('.guess-two-alert');
 var guessTwoInput = document.getElementById('#guess-two');
@@ -35,6 +43,7 @@ var results = document.querySelector('.results');
 // Function Guesser Range
 updateBtn.addEventListener('click', function() {
   updateMinMax();
+  checkRangeInput()
   randomNum(minRange, maxRange);
   document.querySelector('.span-one').innerHTML = minRange
   document.querySelector('.span-two').innerHTML = maxRange
@@ -48,6 +57,8 @@ clearBtn.addEventListener('click', function(){
   addToClear.classList.remove('clear');
   guessOneAlert.classList.remove('guess-error-one');
   guessTwoAlert.classList.remove('guess-error-two');
+  gcgeOne.classList.remove('gcge-one');
+  gcgeTwo.classList.remove('gcge-two'); 
   console.log('clear button is working!')
 });
 
@@ -74,9 +85,24 @@ resetBtn.addEventListener('click', function() {
   guessTwoAlert.classList.remove('guess-error-two');
   nameOneAlert.classList.remove('name-error-one');
   nameTwoAlert.classList.remove('name-error-two');
-
+  gcgeOne.classList.remove('gcge-one');
+  gcgeTwo.classList.remove('gcge-two');
+  gcneOne.classList.remove('gcne-one');
+  gcneTwo.classList.remove('gcne-two');
+  minRangeAlert.classList.remove('min-range-alert')
+  maxRangeAlert.classList.remove('min-range-alert')
+  minRangeText.classList.remove('gcne-one')
+  maxRangeText.classList.remove('gcne-one')
 });
-
+// Range Error
+function checkRangeInput() {
+  if(parseInt(minRange) >= parseInt(maxRange)) {
+    minRangeAlert.classList.add('min-range-alert')
+    maxRangeAlert.classList.add('min-range-alert')
+    minRangeText.classList.add('gcne-one')
+    maxRangeText.classList.add('gcne-one')
+  }
+}
 // Guess Counter Function
 function guessCounter() {
   guessCount += 1
@@ -116,22 +142,28 @@ function updateMinMax() {
 // Function Guesser Challenger
 submitBtn.addEventListener('click', function () {
   getNameGuess();
-  guessCounter();
   checkInputFields();
-  console.log('line 121', nameOne.length, nameTwo.length);
+  // console.log('line 121', nameOne.length, nameTwo.length);
   document.querySelector('#current-challenger-one').innerHTML = nameOne;
   document.querySelector('#current-challenger-two').innerHTML = nameTwo;
   document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = guessOne;
   document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = guessTwo;
-  compareResults1(randoNum, guessOne);
-  compareResults2(randoNum, guessTwo);
-  console.log('type of:', typeof(guessOne))
-  checkForWinner(randoNum, guessOne, guessTwo);
-  if (timerOn === false){
-    startTime = Date.now();
-    timerOn = true
-  }
-  console.log('line 119 - timerOn: ', timerOn)
+  if ((parseInt(guessOne) >= parseInt(minRange))) {
+    console.log('THIS FIRED OFF')
+   // && parseInt(guessOne) <= parseInt(maxRange))) {
+     // (parseInt(guessTwo) >= parseInt(minRange) && parseInt(guessTwo) <= parseInt(maxRange))) {
+    compareResults1(randoNum, guessOne);
+    compareResults2(randoNum, guessTwo);
+    checkForWinner(randoNum, guessOne, guessTwo);
+    guessCounter();
+  
+    console.log('type of:', typeof(guessOne))
+    if (timerOn === false){
+      startTime = Date.now();
+      timerOn = true
+    }
+    console.log('line 119 - timerOn: ', timerOn)
+};
 });
 
 function checkInputFields() {
@@ -141,20 +173,25 @@ function checkInputFields() {
     guessOneAlert.classList.add('guess-error-one')
     // document.querySelector('.guesser-score-current-current-guess-num-one').innerHTML = '0'
     document.querySelector('#guess-one').value = ''
+    gcgeOne.classList.add('gcge-one')
   };
   if(parseInt(guessTwo) < parseInt(minRange)|| parseInt(guessTwo) > parseInt(maxRange)) {
     guessTwoAlert.classList.add('guess-error-two')
     document.querySelector('#guess-two').value = ''
     // document.querySelector('.guesser-score-current-current-guess-num-two').innerHTML = '0'
+    gcgeTwo.classList.add('gcge-two')
   };
   if(nameOne.length === 0) {
     nameOneAlert.classList.add('name-error-one')
     document.querySelector('#name-one').value = ''
+    gcneOne.classList.add('gcne-one');
   };
   if(nameTwo.length === 0) {
     nameTwoAlert.classList.add('name-error-two')
     document.querySelector('#name-two').value = ''
+    gcneTwo.classList.add('gcne-two');
   };
+
 };
 
 function getNameGuess() {
