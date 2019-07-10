@@ -68,8 +68,8 @@ strong {
 	flex: 1;
 	background-color: #f7f7f7;
 	justify-content: center;
-	max-width:50%; 
-	min-width:516px;
+	/*max-width:50%; */
+	/*min-width:516px;*/
 }
 .guesser-range{
 	display: flex;
@@ -272,7 +272,7 @@ span {
 	width: 30%;
 	font-weight: 700;
 	color: #ffffff;
-	font-size: 17px;
+	font-size: 1em;
 	padding: 7px;
 	margin-left: 3%;
 	margin-top: 
@@ -320,7 +320,6 @@ span {
 	margin: auto;
 	margin-top: 25px;
 	margin-bottom: 25px;
-	height: 200px;
 }
 
 .guesser-score-h2 {
@@ -365,10 +364,10 @@ span {
 	margin-bottom: 10px;
 }
 .guesser-score-line{
-	width: 1px;
-	height: 109%;
+	width: 2px;
+	height: 185px;
 	background-color: #D0D2D3;
-	margin-top: -33px;
+	margin-top: -42px;
 }
 
 
@@ -383,6 +382,7 @@ span {
 	background-color: #d0d2d3;
 	width: 50%;
 	flex: 1;
+	/*min-width:516px;*/
 }
 .results-cards {
 	display: flex;
@@ -459,11 +459,142 @@ span {
 	color: #404041;
 }
 
+@media (max-width: 976px){
+*{
+	transition: ease all .3s;
+}
+	.bigBoi {
+	display: flex;
+	flex-direction: column;
+	/*flex-wrap: wrap;*/
+	/*transition: ease all .5s;*/
+	
+	}
+	.guesser {
+	width: 100%;
+	max-width: 100%;
+	}
+	.results{
+		width: 100%;
+	}
 
+}
+
+@media (max-width: 650px){
+	.header{
+		height: 90px;
+	}
+	.header-h1 {
+	font-size: 35px;
+	font-weight: 300;
+	color: #DD1972;
+	display: flex;
+	flex: 1;
+	}
+	.header-line-container-text{
+		font-size: 13px;
+	}
+
+	.header-line-container-line{
+		width: 15%;
+	}
+	.guesser-range-row{
+		flex-direction: column;
+		/*border: 2px solid red;*/
+		align-items: flex-start;
+		margin-left: 2%;
+		margin-bottom: 0%;
+		}
+	.guesser-range{
+		margin-top: 25px;
+	}
+	.guesser-range-row-container{
+		width: 95%;
+		margin: 0;
+	}
+	.guess-range-row-container-2{
+		width: 95%;
+		margin: 0;
+	}
+	.guesser-range-input {
+    border: 1px solid #D0D2D3;
+  }
+	.guesser-range-button{
+		width: 23%;
+		margin-bottom: 1%;
+		margin-left: 0%;
+		min-width: 100px;
+	}
+	.guesser-score-container {
+		flex-direction: column;
+	}
+	.guesser-player-challenger-div{
+		flex-direction: column;
+		width: 95%;
+		margin-left: 3%;
+	}
+	.guesser-challenger-buttons{
+		flex-direction: column;
+		align-items: center;
+		width: 95%;
+    margin-left: 2%;
+	}
+	.guesser-challenger-buttons-guess{
+		width: 100%;
+		margin-left: 0%;
+		margin-bottom: 3%;
+	}
+	.guesser-challenger-buttons-reset{
+		width: 100%;
+		margin-bottom: 3%;
+	}
+	.guesser-challenger-buttons-clear{
+		width: 100%;
+		margin-right: 0%;
+		margin-bottom: 3%;
+	}
+
+	.guesser-challenger-input{
+		margin-bottom: -15px;
+	}
+	.form-player {   
+		width: 95%;
+	}
+	.form-guess{
+		width: 95%;
+	}
+	.guesser-score{
+		height: none;
+	}
+	.guesser-score-current-result{
+		margin-bottom: 0px;
+	}
+	.guesser-score-line{
+		height: 2px;
+		width: 260px;
+		margin: 10px 0px;
+	}
+	.results-cards-winner {
+		margin: 10px 0px;
+	}
+	.results-cards-challengers{
+		flex-direction: column;
+	}
+	.challanger-1, .challanger-2{
+		margin: 0px;
+	}
+
+	input[type="text"],
+	input[type="number"] {
+	border: 1px solid #D0D2D3;
+	}
+}
+}
 
 input[type="text"],
 input[type="number"] {
 	outline: none;
+	border: 1px solid #D0D2D3;
 }
 
 input[type="text"]:focus,
