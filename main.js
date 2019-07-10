@@ -126,15 +126,34 @@ function guessCounter() {
 
 // Button disable functionality
 
+
+// var guesserChallangerParent = document.querySelector('.guesser-range')
+
+// guesserChallangerParent.addEventListener('keypress', function(event){
+//   if (event.target.className === 'guess-one-alert'){
+//     clearBtnDisable
+//   }
+// })
+
 function clearBtnDisable(){
   addToClear.classList.add('clear');
     clearBtn.style.backgroundColor='#6e6e6e';
     clearBtn.disabled = false;
 }
 
+var guesserChallangerParent = document.querySelector('.guesser-challenger')
+var guesserRangeParent = document.querySelector('.guesser-range')
+
 clearBtn.disabled = true;
-document.getElementById('guess-one').addEventListener('keypress', clearBtnDisable);
-document.getElementById('guess-two').addEventListener('keypress', clearBtnDisable);
+guesserChallangerParent.addEventListener('keypress', function(event){
+  if (event.target.id === 'guess-one' || event.target.id === 'guess-two'){
+      clearBtnDisable();
+  }
+})
+
+// clearBtn.disabled = true;
+// document.getElementById('guess-one').addEventListener('keypress', clearBtnDisable);
+// document.getElementById('guess-two').addEventListener('keypress', clearBtnDisable);
 
 
 function resetBtnDisable() {
@@ -143,10 +162,23 @@ function resetBtnDisable() {
     resetBtn.disabled = false;
 }
 resetBtn.disabled = true;
-document.getElementById('name-one').addEventListener('keypress', resetBtnDisable);
-document.getElementById('name-two').addEventListener('keypress', resetBtnDisable);
-document.getElementById('min-input').addEventListener('keypress', resetBtnDisable);
-document.getElementById('max-input').addEventListener('keypress', resetBtnDisable);
+guesserChallangerParent.addEventListener('keypress', function(event){
+  if (event.target.id === 'name-one' || event.target.id === 'name-two'){
+      resetBtnDisable();
+  }
+})
+
+guesserRangeParent.addEventListener('keypress', function(event){
+  if (event.target.id === 'min-input' || event.target.id === 'max-input'){
+      resetBtnDisable();
+  }
+})
+
+
+// document.getElementById('name-one').addEventListener('keypress', resetBtnDisable);
+// document.getElementById('name-two').addEventListener('keypress', resetBtnDisable);
+// document.getElementById('min-input').addEventListener('keypress', resetBtnDisable);
+// document.getElementById('max-input').addEventListener('keypress', resetBtnDisable);
 
 
 function updateMinMax() {
@@ -208,6 +240,7 @@ function checkInputFields() {
   };
 
 };
+
 
 function getNameGuess() {
     nameOne = document.querySelector('#name-one').value;
@@ -279,6 +312,15 @@ function getTime(timeStart) {
   console.log('timerOn: ', timerOn)
   return timeElapsed = minutesWithDec
 }
+
+var xButtonParent = document.querySelector('.results');
+xButtonParent.addEventListener('click', function(event){
+  console.log('I want to take away this box!!')
+  if (event.target.className === 'results-cards-stats-exit-button'){
+    console.log('take away this box!!')
+  }
+})
+
 
 function buildCard(winner) {
 results.insertAdjacentHTML('afterbegin', `
