@@ -16,11 +16,12 @@
 - JavaScript
 
 ## Screenshots
-  ### Prompts:
+### Prompts:
   <img src="images/prompt1.jpg" alt="Number Guesser Desktop">
   <img src="images/prompt2.jpg" alt="Number Guesser Desktop with Error Message">
   <img src="images/prompt3.jpg" alt="Number Guesser Mobile">
-  ### Actual:
+  
+### Actual:
   <img src="images/Number_Guesser_Desktop.png" alt="">
   <img src="images/Number_Guesser_Mobile.png" alt="">
   <img src="images/Number_Guesser_Errors.png" alt="">
@@ -47,7 +48,7 @@
 
 6. If you don't guess within the range, you'll know. You'll also know if you try to play anonymously (not entering a name) or not entering a number.
 
-##Take It For A Spin
+## Take It For A Spin
 
 View <a href="https://rahughes.github.io/Snacks-Roger-NG/">here</a> on GitHub.
 
