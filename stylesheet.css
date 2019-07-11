@@ -148,7 +148,7 @@ strong {
 .guess-challenger-header {
   margin-top: 10px;
   margin-bottom: 0px;
-  margin-left: 2%;
+  margin-left: 3%;
   color: #6e6e6e;
 }
 span {
@@ -168,6 +168,7 @@ span {
   height: 25px;
   width: 100%;
   padding: 2%;
+  margin-left: 1%;
 }
 .guesser-challenger-player-name {
   /*margin-left: 5%;*/
@@ -219,6 +220,7 @@ span {
   flex-direction: column;
   /*justify-content: space-around;*/
   margin-top: 20px;
+  margin-right: 3%;
   /*width: 50%;*/
 }
 .form-player {
