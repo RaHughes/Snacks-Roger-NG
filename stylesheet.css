@@ -115,6 +115,7 @@ strong {
 .guesser-range-input{
   width:100%;
   height: 25px;
+  padding-left: 5px;
 }
 .guesser-range-button{
   border-radius: 40px;
@@ -254,6 +255,9 @@ span {
 }
 .gcge-two {
   visibility: visible;
+}
+.guesser-challenger-input{
+	padding-left: 5px;
 }
 .guesser-challenger-buttons {
   display: flex;
@@ -592,6 +596,7 @@ input[type="text"],
 input[type="number"] {
   outline: none;
   border: 1px solid #D0D2D3;
+  padding-left: 10px;
 }
 
 input[type="text"]:focus,
