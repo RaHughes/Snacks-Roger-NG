@@ -568,7 +568,7 @@ span {
   }
   .guesser-score-line{
     height: 2px;
-    width: 260px;
+    width: 90%;
     margin: 10px 0px;
   }
   .results-cards-winner {
