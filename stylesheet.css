@@ -357,7 +357,8 @@ span {
   font-size: 22px;
   font-weight: 300;
   color: #6E6E6E;
-  margin: -10px 0px;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
 .guesser-score-line{
   width: 2px;
@@ -404,7 +405,7 @@ span {
   margin: 20px 0px;
 }
 .results-cards-winner-name {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
   color: #6E6E6E;
   margin-bottom: -7px;
@@ -447,6 +448,10 @@ span {
 .results-cards-lines {
   margin: 0px 20px 0px 20px;
   color: #404041;
+}
+
+#guessNumber{
+	text-decoration: none;
 }
 
 @media (max-width: 976px){
