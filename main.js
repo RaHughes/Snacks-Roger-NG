@@ -48,8 +48,8 @@ updateBtn.addEventListener('click', function() {
   document.querySelector('.span-one').innerHTML = minRange
   document.querySelector('.span-two').innerHTML = maxRange
   updateBtn.disabled = true;
-  clearBtn.style.backgroundColor='#d0d2d3';
-  addToClear.classList.remove('clear');
+  updateBtn.style.backgroundColor='#d0d2d3';
+  updateBtn.classList.remove('clear');
 })
 
 clearBtn.addEventListener('click', function(){
