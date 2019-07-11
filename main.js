@@ -1,5 +1,3 @@
-
-
 // Variable Guesser Range
 var minRange = document.querySelector('#min-input').value;
 var minRangeAlert = document.querySelector('.min');
@@ -192,20 +190,12 @@ if ((parseInt(guessOne) >= parseInt(minRange)) && (parseInt(guessOne) <= parseIn
     compareResults2(randoNum, guessTwo);
     checkForWinner(randoNum, guessOne, guessTwo);
     guessCounter();
-  
-    console.log('type of:', typeof(guessOne))
     if (timerOn === false){
       startTime = Date.now();
       timerOn = true
     }
     console.log('line 119 - timerOn: ', timerOn)
 };
-});
-
-submitBtn.addEventListener('click', function() {
-  getNameGuess();
-  checkInputFields();
-
 });
 
 function checkInputFields() {
@@ -233,7 +223,6 @@ function checkInputFields() {
     document.querySelector('#name-two').value = ''
     gcneTwo.classList.add('gcne-two');
   };
-
 };
 
 
@@ -252,7 +241,6 @@ function randomNum(min, max) {
     randoNum = Math.floor(Math.random() * (max - min) + min);
     console.log('randoNum: ', randoNum);
 }
-
 randomNum(minRange, maxRange);
 
 function compareResults1(randomNumber, userGuess) {
@@ -284,9 +272,11 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
   userGuessOne = parseInt(guessOne);
   userGuessTwo = parseInt(guessTwo);
   if(userGuessOne === randoNum) {
+    console.log('line 286: ', startTime)
     getTime(startTime)
     buildCard(nameOne)
     guessCount = 0
+    updateRange(minRange, maxRange)
     console.log('Player 1 wins!');
   } 
 
@@ -294,11 +284,16 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
     getTime(startTime)
     buildCard(nameTwo)
     guessCount = 0
+    updateRange(minRange, maxRange)
     console.log('Player 2 wins!');
   }
 }
 
 function getTime(timeStart) {
+  if (timeStart === undefined){
+    timeElapsed = 0
+  } else {
+  console.log('timeStart: ', timeStart)
   var milliSeconds = Date.now() - timeStart
   var seconds = (Math.floor(milliSeconds/1000))
   var minutes = (seconds/60)
@@ -307,6 +302,20 @@ function getTime(timeStart) {
   console.log('minutesWithDec: ', minutesWithDec)
   console.log('timerOn: ', timerOn)
   return timeElapsed = minutesWithDec
+  }
+}
+
+function updateRange (min, max){
+  console.log('line 313: ', max)
+  maxRange = parseInt(max);
+  minRange = parseInt(min);
+  maxRange += 10;
+  minRange -=10;
+  console.log('line 316: ', minRange, maxRange)
+  randomNum(minRange, maxRange)
+  console.log('line 318: ', maxRange)
+  document.querySelector('.span-one').innerHTML = minRange;
+  document.querySelector('.span-two').innerHTML = maxRange;
 }
 
 // var xButtonParent = document.querySelector('.results');
@@ -334,7 +343,7 @@ results.insertAdjacentHTML('afterbegin', `
     <hr class="results-cards-lines">
     <div class="results-cards-stats">
       <p class="results-cards-stats-guesses"><span id="guessNumber">${guessCount.toString()}</span> GUESSES</p>
-      <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed} MINUTES</span></p>
+      <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed}</span> MINUTES</span></p>
       <buttom class="results-cards-stats-exit-button">X</buttom>
     </div>
   </section>`)
