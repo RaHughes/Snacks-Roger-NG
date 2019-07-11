@@ -192,19 +192,12 @@ if ((parseInt(guessOne) >= parseInt(minRange)) && (parseInt(guessOne) <= parseIn
     compareResults2(randoNum, guessTwo);
     checkForWinner(randoNum, guessOne, guessTwo);
     guessCounter();
-  
     if (timerOn === false){
       startTime = Date.now();
       timerOn = true
     }
     console.log('line 119 - timerOn: ', timerOn)
 };
-});
-
-submitBtn.addEventListener('click', function() {
-  getNameGuess();
-  checkInputFields();
-
 });
 
 function checkInputFields() {
@@ -232,7 +225,6 @@ function checkInputFields() {
     document.querySelector('#name-two').value = ''
     gcneTwo.classList.add('gcne-two');
   };
-
 };
 
 
@@ -251,7 +243,6 @@ function randomNum(min, max) {
     randoNum = Math.floor(Math.random() * (max - min) + min);
     console.log('randoNum: ', randoNum);
 }
-
 randomNum(minRange, maxRange);
 
 function compareResults1(randomNumber, userGuess) {
@@ -287,6 +278,7 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
     getTime(startTime)
     buildCard(nameOne)
     guessCount = 0
+    updateRange(minRange, maxRange)
     console.log('Player 1 wins!');
   } 
 
@@ -294,6 +286,7 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
     getTime(startTime)
     buildCard(nameTwo)
     guessCount = 0
+    updateRange(minRange, maxRange)
     console.log('Player 2 wins!');
   }
 }
@@ -312,6 +305,19 @@ function getTime(timeStart) {
   console.log('timerOn: ', timerOn)
   return timeElapsed = minutesWithDec
   }
+}
+
+function updateRange (min, max){
+  console.log('line 313: ', max)
+  maxRange = parseInt(max);
+  minRange = parseInt(min);
+  maxRange += 10;
+  minRange -=10;
+  console.log('line 316: ', minRange, maxRange)
+  randomNum(minRange, maxRange)
+  console.log('line 318: ', maxRange)
+  document.querySelector('.span-one').innerHTML = minRange;
+  document.querySelector('.span-two').innerHTML = maxRange;
 }
 
 // var xButtonParent = document.querySelector('.results');
