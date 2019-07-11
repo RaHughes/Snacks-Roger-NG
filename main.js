@@ -47,6 +47,9 @@ updateBtn.addEventListener('click', function() {
   randomNum(minRange, maxRange);
   document.querySelector('.span-one').innerHTML = minRange
   document.querySelector('.span-two').innerHTML = maxRange
+  updateBtn.disabled = true;
+  clearBtn.style.backgroundColor='#d0d2d3';
+  addToClear.classList.remove('clear');
 })
 
 clearBtn.addEventListener('click', function(){
@@ -127,15 +130,6 @@ function guessCounter() {
 
 // Button disable functionality
 
-
-// var guesserChallangerParent = document.querySelector('.guesser-range')
-
-// guesserChallangerParent.addEventListener('keypress', function(event){
-//   if (event.target.className === 'guess-one-alert'){
-//     clearBtnDisable
-//   }
-// })
-
 function clearBtnDisable(){
   addToClear.classList.add('clear');
     clearBtn.style.backgroundColor='#6e6e6e';
@@ -151,17 +145,13 @@ guesserChallangerParent.addEventListener('keypress', function(event){
   }
 })
 
-// clearBtn.disabled = true;
-// document.getElementById('guess-one').addEventListener('keypress', clearBtnDisable);
-// document.getElementById('guess-two').addEventListener('keypress', clearBtnDisable);
-
-
 function resetBtnDisable() {
   addToReset.classList.add('reset');
     resetBtn.style.backgroundColor='#6e6e6e';
     resetBtn.disabled = false;
 }
 resetBtn.disabled = true;
+updateBtn.disabled = true;
 guesserChallangerParent.addEventListener('keypress', function(event){
   if (event.target.id === 'name-one' || event.target.id === 'name-two'){
       resetBtnDisable();
@@ -171,28 +161,15 @@ guesserChallangerParent.addEventListener('keypress', function(event){
 guesserRangeParent.addEventListener('keypress', function(event){
   if (event.target.id === 'min-input' || event.target.id === 'max-input'){
       resetBtnDisable();
+      updateBtnDisable();
   }
 })
 
 function updateBtnDisable() {
-  updateBtn.classList.add('reset');
+  updateBtn.classList.add('clear');
   updateBtn.style.backgroundColor='#6e6e6e';
   updateBtn.disabled = false;
 }
-
-updateBtn.disabled = true;
-guesserRangeParent.addEventListener('click', function(event) {
-  if(event.target.className === 'guesser-range-button'){
-    updateBtnDisable();
-  }
-})
-
-
-// document.getElementById('name-one').addEventListener('keypress', resetBtnDisable);
-// document.getElementById('name-two').addEventListener('keypress', resetBtnDisable);
-// document.getElementById('min-input').addEventListener('keypress', resetBtnDisable);
-// document.getElementById('max-input').addEventListener('keypress', resetBtnDisable);
-
 
 function updateMinMax() {
   minRange = document.querySelector('#min-input').value;
