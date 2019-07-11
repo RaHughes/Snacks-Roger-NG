@@ -1,117 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Number Guesser</title>
-	<link rel="Stylesheet" type="text/css" href="stylesheet.css" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,700&display=swap" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Number Guesser</title>
+  <link rel="Stylesheet" type="text/css" href="stylesheet.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<header class="header">
-		<div class="header-container">
-			<h1 class="header-h1"> <strong>NUMBER</strong>GUESSER</h1>
-			<div class="header-line-container">
-				<div class="header-line-container-line"></div>
-				<h2 class="header-line-container-text">ULTIMATE CHALLANGER EDITION</h2>
-				<div class="header-line-container-line"></div>
-			</div>
-		</div>
-	</header>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="header-h1"> <strong>NUMBER</strong>GUESSER</h1>
+      <div class="header-line-container">
+        <div class="header-line-container-line"></div>
+        <h2 class="header-line-container-text">ULTIMATE CHALLANGER EDITION</h2>
+        <div class="header-line-container-line"></div>
+      </div>
+    </div>
+  </header>
 <main class="bigBoi">
-	<main class="guesser">
-		<section class="guesser-range">
-			<p id="guesser-range-h2">Set Range </p>
-			<div class="guesser-range-row">
-				<container class="guesser-range-row-container">
-					<h2 class="guesser-range-min-max">Min Range </h2>
-					<input class="guesser-range-input min" id="min-input" type="number" value="1" >
-					<p class="GCNE guesser-range-input-one"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Invalid number</p>
-				</container>
-				<container class="guess-range-row-container-2">
-					<p class="guesser-range-min-max"> Max Range </p>
-					<input class="guesser-range-input max" id="max-input" type="number" value="100" >
-					<p class="GCNE guesser-range-input-two"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Invalid number</p>
-				</container>
-				<button class="guesser-range-button">UPDATE</button>
-			</div>
-		</section>
-		<section class="guesser-challenger">
-			<p class="guess-challenger-header"> The Current Range is <span class="span-one">1</span> to <span class="span-two">100</span></p>
-			<container class="guesser-challenger-player one">
-				<h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
-				<div class="guesser-player-challenger-div">
-					<container class="guesser-challenger-player-form form-player">
-						<p class="guesser-challenger-player-name">Name</p>
-						<input class="guesser-challenger-input name-one-alert" id="name-one" type="text">
-						<p class="GCNE guesser-challenger-name-error-one"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a name</p>
-					</container>
-					<container class="guesser-challenger-player-form form-guess">
-						<p class="guesser-challenger-player-guess">Guess</p>
-						<input class="guesser-challenger-input guess-one-alert" id="guess-one" placeholder="" type="number">
-						<p class="GCNE guesser-number-error-one"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a valid number</p>
-					</container>
-				</div>
-			</container>
-			<container class="guesser-challenger-player two">
-				<h2 class="guesser-challenger-player-h2"> Challenger 2</h2>
-				<div class="guesser-player-challenger-div">
-					<container class="guesser-challenger-player-form form-player">
-						<p class='guesser-challenger-player-name'>Name</p>
-						<input class="guesser-challenger-input name-two-alert" id="name-two"type="text">
-						<p class="GCNE guesser-name-error-two"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a name</p>
-					</container>
-					<container class="guesser-challenger-player-form form-guess">
-						<p class="guesser-challenger-player-guess">Guess</p>
-						<input class="guesser-challenger-input guess-two-alert" id="guess-two" type="number">
-						<p class="GCNE guesser-number-error-two"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a valid number</p>
-					</container>
-				</div>
-			</container>
-			<container class="guesser-challenger-buttons">
-				<button class="guesser-challenger-buttons-guess">SUBMIT GUESS</button>
-				<button class="guesser-challenger-buttons-reset">RESET GAME</button>
-				<button class="guesser-challenger-buttons-clear">CLEAR GAME</button>
-			</container>
-		</section>
-		<section class="guesser-score">
-			<h2 class="guesser-score-h2"> Lastest Score </h2>
-			<container class="guesser-score-container">	
-				<div class="guesser-score-current player-one">
-					<h3 class="guesser-score-current-challanger" id="current-challenger-one"> Challenger 1 Name </h3>
-					<p class="guesser-score-current-current-guess-text">current guess</p>
-					<p class="guesser-score-current-current-guess-num-one">Num</p>
-					<p class="guesser-score-current-result result-one">result</p>
-				</div>
-				<div class="guesser-score-line"></div>
-				<div class="guesser-score-current player-two">
-					<h3 class="guesser-score-current-challanger" id="current-challenger-two"> Challenger 2 Name </h3>
-					<p class="guesser-score-current-current-guess-text">current guess</p>
-					<p class="guesser-score-current-current-guess-num-two">Num</p>
-					<p class="guesser-score-current-result result-two">result</p>
-				</div>
-			</container>
-		</section>
-	</main>
-	<main class="results">
-		<!-- <section class="results-cards">
-			<div class="results-cards-challengers">
-				<h4 class="results-cards-challengers challanger-1"> CHALLENGER 1 NAME </h4>
-				<p class="results-cards-challengers-vs"> vs </p>
-				<h4 class="results-cards-challengers challanger-2"> CHALLENGER 2 NAME </h4>
-			</div>
-			<hr class="results-cards-lines">
-			<div class="results-cards-winner">
-				<p class="results-cards-winner-name">CHALLNGER NAME</p>
-				<P class="results-cards-winner-winner" >WINNER</P>
-			</div class="results-cards-lines">
-			<hr class="results-cards-lines">
-			<div class="results-cards-stats">
-				<p class="results-cards-stats-guesses">GUESSES</p>
-				<p class="results-cards-stats-minutes">MINUTES</p>
-				<buttom class="results-cards-stats-exit-button">X</buttom>
-			</div>
-		</section> -->
-	</main>
+  <main class="guesser">
+    <section class="guesser-range">
+      <p id="guesser-range-h2">Set Range </p>
+      <div class="guesser-range-row">
+        <container class="guesser-range-row-container">
+          <h2 class="guesser-range-min-max">Min Range </h2>
+          <input class="guesser-range-input min" id="min-input" type="number" value="1" >
+          <p class="GCNE guesser-range-input-one"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Invalid number</p>
+        </container>
+        <container class="guess-range-row-container-2">
+          <p class="guesser-range-min-max"> Max Range </p>
+          <input class="guesser-range-input max" id="max-input" type="number" value="100" >
+          <p class="GCNE guesser-range-input-two"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Invalid number</p>
+        </container>
+        <button class="guesser-range-button">UPDATE</button>
+      </div>
+    </section>
+    <section class="guesser-challenger">
+      <p class="guess-challenger-header"> The Current Range is <span class="span-one">1</span> to <span class="span-two">100</span></p>
+      <container class="guesser-challenger-player one">
+        <h2 class="guesser-challenger-player-h2"> Challenger 1</h2>
+        <div class="guesser-player-challenger-div">
+          <container class="guesser-challenger-player-form form-player">
+            <p class="guesser-challenger-player-name">Name</p>
+            <input class="guesser-challenger-input name-one-alert" id="name-one" type="text">
+            <p class="GCNE guesser-challenger-name-error-one"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a name</p>
+          </container>
+          <container class="guesser-challenger-player-form form-guess">
+            <p class="guesser-challenger-player-guess">Guess</p>
+            <input class="guesser-challenger-input guess-one-alert" id="guess-one" placeholder="" type="number">
+            <p class="GCNE guesser-number-error-one"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a valid number</p>
+          </container>
+        </div>
+      </container>
+      <container class="guesser-challenger-player two">
+        <h2 class="guesser-challenger-player-h2"> Challenger 2</h2>
+        <div class="guesser-player-challenger-div">
+          <container class="guesser-challenger-player-form form-player">
+            <p class='guesser-challenger-player-name'>Name</p>
+            <input class="guesser-challenger-input name-two-alert" id="name-two"type="text">
+            <p class="GCNE guesser-name-error-two"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a name</p>
+          </container>
+          <container class="guesser-challenger-player-form form-guess">
+            <p class="guesser-challenger-player-guess">Guess</p>
+            <input class="guesser-challenger-input guess-two-alert" id="guess-two" type="number">
+            <p class="GCNE guesser-number-error-two"><img class="guesser-challenger-error-image" src="images/error-icon.svg"> Enter a valid number</p>
+          </container>
+        </div>
+      </container>
+      <container class="guesser-challenger-buttons">
+        <button class="guesser-challenger-buttons-guess">SUBMIT GUESS</button>
+        <button class="guesser-challenger-buttons-reset">RESET GAME</button>
+        <button class="guesser-challenger-buttons-clear">CLEAR GAME</button>
+      </container>
+    </section>
+    <section class="guesser-score">
+      <h2 class="guesser-score-h2"> Lastest Score </h2>
+      <container class="guesser-score-container"> 
+        <div class="guesser-score-current player-one">
+          <h3 class="guesser-score-current-challanger" id="current-challenger-one"> Challenger 1 Name </h3>
+          <p class="guesser-score-current-current-guess-text">current guess</p>
+          <p class="guesser-score-current-current-guess-num-one">Num</p>
+          <p class="guesser-score-current-result result-one">result</p>
+        </div>
+        <div class="guesser-score-line"></div>
+        <div class="guesser-score-current player-two">
+          <h3 class="guesser-score-current-challanger" id="current-challenger-two"> Challenger 2 Name </h3>
+          <p class="guesser-score-current-current-guess-text">current guess</p>
+          <p class="guesser-score-current-current-guess-num-two">Num</p>
+          <p class="guesser-score-current-result result-two">result</p>
+        </div>
+      </container>
+    </section>
+  </main>
+  <main class="results">
+    <!-- <section class="results-cards">
+      <div class="results-cards-challengers">
+        <h4 class="results-cards-challengers challanger-1"> CHALLENGER 1 NAME </h4>
+        <p class="results-cards-challengers-vs"> vs </p>
+        <h4 class="results-cards-challengers challanger-2"> CHALLENGER 2 NAME </h4>
+      </div>
+      <hr class="results-cards-lines">
+      <div class="results-cards-winner">
+        <p class="results-cards-winner-name">CHALLNGER NAME</p>
+        <P class="results-cards-winner-winner" >WINNER</P>
+      </div class="results-cards-lines">
+      <hr class="results-cards-lines">
+      <div class="results-cards-stats">
+        <p class="results-cards-stats-guesses">GUESSES</p>
+        <p class="results-cards-stats-minutes">MINUTES</p>
+        <buttom class="results-cards-stats-exit-button">X</buttom>
+      </div>
+    </section> -->
+  </main>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.9.0/d3.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
