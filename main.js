@@ -193,7 +193,6 @@ if ((parseInt(guessOne) >= parseInt(minRange)) && (parseInt(guessOne) <= parseIn
     checkForWinner(randoNum, guessOne, guessTwo);
     guessCounter();
   
-    console.log('type of:', typeof(guessOne))
     if (timerOn === false){
       startTime = Date.now();
       timerOn = true
@@ -284,6 +283,7 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
   userGuessOne = parseInt(guessOne);
   userGuessTwo = parseInt(guessTwo);
   if(userGuessOne === randoNum) {
+    console.log('line 286: ', startTime)
     getTime(startTime)
     buildCard(nameOne)
     guessCount = 0
@@ -299,6 +299,10 @@ function checkForWinner(randoNum, guessOne, guessTwo) {
 }
 
 function getTime(timeStart) {
+  if (timeStart === undefined){
+    timeElapsed = 0
+  } else {
+  console.log('timeStart: ', timeStart)
   var milliSeconds = Date.now() - timeStart
   var seconds = (Math.floor(milliSeconds/1000))
   var minutes = (seconds/60)
@@ -307,6 +311,7 @@ function getTime(timeStart) {
   console.log('minutesWithDec: ', minutesWithDec)
   console.log('timerOn: ', timerOn)
   return timeElapsed = minutesWithDec
+  }
 }
 
 // var xButtonParent = document.querySelector('.results');
@@ -334,7 +339,7 @@ results.insertAdjacentHTML('afterbegin', `
     <hr class="results-cards-lines">
     <div class="results-cards-stats">
       <p class="results-cards-stats-guesses"><span id="guessNumber">${guessCount.toString()}</span> GUESSES</p>
-      <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed} MINUTES</span></p>
+      <p class="results-cards-stats-minutes"><span id="guessNumber">${timeElapsed}</span> MINUTES</span></p>
       <buttom class="results-cards-stats-exit-button">X</buttom>
     </div>
   </section>`)
