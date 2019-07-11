@@ -1,14 +1,12 @@
 # Number Gusser Project
 
 ## Table of contents
-* [General Info](#Lynne's-Dog-Party)
-* [Motivation](#Motivation)
-* [Built With](#Built-With) 
-* [Screenshots](#Screenshots)
-* [How to Use](#How-to-Use)
-* [Tests](#Tests)
-* [Setup](#Setup)
-* [License](#License)
+* Built With 
+* Screenshots
+* Features
+* Try It Out
+* Take It For A Spin
+* Why'd We Do This?
 
 
 ## Built With
@@ -23,18 +21,17 @@
   <img src="images/prompt2.jpg" alt="Number Guesser Desktop with Error Message">
   <img src="images/prompt3.jpg" alt="Number Guesser Mobile">
   ### Actual:
-  <img src="" alt="">
-  <img src="" alt="">
-  <img src="" alt="">
+  <img src="images/Number_Guesser_Desktop.png" alt="">
+  <img src="images/Number_Guesser_Mobile.png" alt="">
+  <img src="images/Number_Guesser_Errors.png" alt="">
 
 ## Features
 
-- [x] Altering page content via input field (JS)
-- [x] Responsive (CSS Media Query for navigation and page columns)
-- [x] Pictures of adorable doggos
-- [x] One-page design
-- [ ] Pictures of adorable kitties
-- [ ] Link destinations
+- [x] Altering page content via input fields (JS)
+- [x] Responsive (CSS Media Query with 2 break points)
+- [x] Logic to create random number
+- [x] Logic to compare guess to random guess and give accurate feedback
+- [x] Use of event listeners at the parent level(bubbling)
 
 ## Try It Out
 
@@ -52,7 +49,7 @@
 
 ##Take It For A Spin
 
-View <a href="https://github.com/lynnerang/dog-party-website">here</a> on GitHub.
+View <a href="https://rahughes.github.io/Snacks-Roger-NG/">here</a> on GitHub.
 
 OR 
 
