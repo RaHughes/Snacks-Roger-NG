@@ -363,7 +363,11 @@ span {
   font-size: 22px;
   font-weight: 300;
   color: #6E6E6E;
+<<<<<<< HEAD
+  margin-top: -10px;
+=======
   margin-top: -5px;
+>>>>>>> master
   margin-bottom: 10px;
 }
 .guesser-score-line{
@@ -484,6 +488,9 @@ span {
 @media (max-width: 650px){
   .header{
     height: 90px;
+    *{
+  transition: ease all .1s;
+}
   }
   .header-h1 {
   font-size: 35px;

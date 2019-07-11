@@ -1,5 +1,3 @@
-
-
 // Variable Guesser Range
 var minRange = document.querySelector('#min-input').value;
 var minRangeAlert = document.querySelector('.min');
