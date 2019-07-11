@@ -49,7 +49,7 @@
 
 ##Take It For A Spin
 
-View <a href="https://github.com/lynnerang/dog-party-website">here</a> on GitHub.
+View <a href="https://rahughes.github.io/Snacks-Roger-NG/">here</a> on GitHub.
 
 OR 
 
