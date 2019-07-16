@@ -54,7 +54,7 @@ View <a href="https://rahughes.github.io/Snacks-Roger-NG/">here</a> on GitHub.
 
 OR 
 
-Download and unzip the dog-party-website.zip file, and open the index.html file to view the website.
+Download and unzip the Snacks-Roger-NG.zip file, and open the index.html file to view the website.
 
 ## Why'd We Do This?
 
